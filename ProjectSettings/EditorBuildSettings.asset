@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gameCards.unity
     guid: f5b72e73b3c08ca419143111c4676478
+  - enabled: 1
+    path: Assets/Scenes/joinGameScene.unity
+    guid: c298d63c7e889f744849ad0a28f5b7ec
+  - enabled: 1
+    path: Assets/Scenes/selectScene.unity
+    guid: 04c5e249535e47640a95340c48b32afa
   m_configObjects: {}

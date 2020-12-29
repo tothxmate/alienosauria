@@ -201,7 +201,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 309535777}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1348254161}
+        m_MethodName: btn_change_scene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: joinGameScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &309535777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,7 +740,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1348254160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f9dc5e776b2474c80141439ea62463, type: 3}
+  m_Script: {fileID: 11500000, guid: cc8e3b72c3085e54bbcb8179d102f27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1348254162
