@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 492}
+  m_MinSize: {x: 678, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 24983
+  controlID: 71975
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 947
-  m_MinSize: {x: 403, y: 492}
+  m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 24984
+  controlID: 71976
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 596
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 24985
+  controlID: 71977
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1150, y: 554}
+  m_TargetSize: {x: 312, y: 554}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -315,14 +315,14 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000011000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 0000000000000000000000000d000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -575
-    m_HBaseRangeMax: 575
+    m_HBaseRangeMin: -156
+    m_HBaseRangeMax: 156
     m_VBaseRangeMin: -277
     m_VBaseRangeMax: 277
     m_HAllowExceedBaseRangeMin: 1
@@ -393,9 +393,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2e560000
-      m_LastClickedID: 22062
-      m_ExpandedIDs: 5eefffff6cefffff7eefffff14fbffff403a0000683a00006e3a0000e2550000f455000000560000285600002e560000
+      m_SelectedIDs: 924a0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6ac3feff74c3feff7ec3feff88c3feff94c3feff9ec3feffaac3feffb4c3feffbec3feffcac3feffd4c3feffdec3fefff0c3feff0ec4feff1cc4feff2ac4feff38c4feff48c4feff56c4feff64c4feff54c5feff62c5feff7cc5feff8ac5feff98c5feffa6c5feffb4c5feffc4c5feffd2c5feffe0c5feffeec5fefffcc5feff0ac6feff18c6feff26c6feff34c6feffb4c6feffc2c6feffd0c6feffdec6feffecc6fefffcc6feff0ac7feff1ec7feff2cc7feff3ac7feff48c7feff56c7feff36cafeff52cafeff6acafeff7cf7feff5efffeff92fffeff9cfffefffa04ffff9c0dffff383dffffa63dffff4e45ffffd845ffffa04affffc04affffce4affff7a5bffff845bffff8e5bffff9a5bffffa45bffffb05bffffba5bffffc65bffffd05bffffdc5bffffe65bfffff05bfffffc5bffff065cffff105cffffbe5effffce5efffff25effff94a3ffffa2a3ffffb8a3ffffaae8ffffd8e8ffff3ce9ffff42eaffff4eeaffff60eaffff6aeaffff76eaffff8ceaffff96eaffffa2eaffffb6eaffff7cf0ffff303a0000583a00005e3a00002a4b00003c4b0000144e00001e4e0000a24e0000d04e0000544f00005e4f0000045a0000325a00007c5a00008e5a00009e5a0000ce610000fc610000f46200001c6300002263000004690000166900005e6c0000866c00008c6c0000a46c0000ae6c0000b86c0000c26c0000de720000d4800000ee800000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -455,9 +455,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 879.5328, y: 369.38452, z: -772.74304}
+    m_Target: {x: 128.62633, y: 259.36725, z: -47.625}
     speed: 2
-    m_Value: {x: 879.5328, y: 369.38452, z: -772.74304}
+    m_Value: {x: 128.62633, y: 259.36725, z: -47.625}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -507,9 +507,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 459.6774
+    m_Target: 282.7178
     speed: 2
-    m_Value: 459.6774
+    m_Value: 296.03958
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -573,20 +573,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/GUI Kit Neon/Sprite/_Common
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/GUI Kit Neon/Sprite/_Common
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity Saves\dinoapp
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ae410000
-    m_LastClickedID: 16814
-    m_ExpandedIDs: 000000009e3a0000a03a0000a23a0000a43a0000b83a000000ca9a3b
+    m_SelectedIDs: 7c3b0000
+    m_LastClickedID: 15228
+    m_ExpandedIDs: 000000006c3b0000703b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -614,7 +614,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009e3a0000a03a0000a43a000000ca9a3b
+    m_ExpandedIDs: 000000006c3b0000703b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

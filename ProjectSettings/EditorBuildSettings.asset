@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/hostGameScene.unity
     guid: aebfe3d6b1c4ad0438836eee974f7ed5
+  - enabled: 1
+    path: Assets/Scenes/gameCards.unity
+    guid: f5b72e73b3c08ca419143111c4676478
   m_configObjects: {}
