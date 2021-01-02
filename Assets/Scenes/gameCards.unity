@@ -133,8 +133,9 @@ GameObject:
   - component: {fileID: 340469214}
   - component: {fileID: 340469213}
   - component: {fileID: 340469212}
+  - component: {fileID: 340469215}
   m_Layer: 5
-  m_Name: Card 2
+  m_Name: Card2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f2e70941ea324084e9f3b8d42b9f8923, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -239,6 +240,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340469210}
   m_CullTransparentMesh: 0
+--- !u!114 &340469215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340469210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191ce0ba561d81d448736f848f7d824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card1: {fileID: 21300000, guid: 46ec6ba8be37edb4aa98ed70471e71a9, type: 3}
+  card2: {fileID: 21300000, guid: a031fb9bc99b9854bb71bf8464c85d41, type: 3}
+  card3: {fileID: 21300000, guid: 07321b092aa43b34da476cec5e4dac8e, type: 3}
+  card4: {fileID: 21300000, guid: f2e70941ea324084e9f3b8d42b9f8923, type: 3}
+  card5: {fileID: 21300000, guid: eb9867607832a174eb421d6fe567ad47, type: 3}
+  card6: {fileID: 21300000, guid: d29694de43374174a99fba962ba590e3, type: 3}
+  card7: {fileID: 21300000, guid: 642ae52626953cf4b81a65bcbe7e1a16, type: 3}
+  card8: {fileID: 21300000, guid: 0e7f415caea578d42bd5bad380ed3c42, type: 3}
+  card9: {fileID: 21300000, guid: a14a442ea6ea8f840b283a2c839c9d3b, type: 3}
+  card10: {fileID: 21300000, guid: 3f1df2277da6ee64180df88af6bbf063, type: 3}
+  randomNumber: 0
+  checkValue: 0
 --- !u!1 &406235755
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +276,7 @@ GameObject:
   - component: {fileID: 406235759}
   - component: {fileID: 406235758}
   - component: {fileID: 406235757}
+  - component: {fileID: 406235760}
   m_Layer: 5
   m_Name: Bell
   m_TagString: Untagged
@@ -319,7 +345,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 406235758}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 406235760}
+        m_MethodName: RingBell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &406235758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +394,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406235755}
   m_CullTransparentMesh: 0
+--- !u!114 &406235760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406235755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7bf2c66f2d3b1468e78a6464b6b504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568209420
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,8 +745,9 @@ GameObject:
   - component: {fileID: 1120071968}
   - component: {fileID: 1120071967}
   - component: {fileID: 1120071966}
+  - component: {fileID: 1120071969}
   m_Layer: 5
-  m_Name: Card 3
+  m_Name: Card3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -784,7 +834,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a14a442ea6ea8f840b283a2c839c9d3b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -802,6 +852,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120071964}
   m_CullTransparentMesh: 0
+--- !u!114 &1120071969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120071964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191ce0ba561d81d448736f848f7d824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card1: {fileID: 21300000, guid: 46ec6ba8be37edb4aa98ed70471e71a9, type: 3}
+  card2: {fileID: 21300000, guid: a031fb9bc99b9854bb71bf8464c85d41, type: 3}
+  card3: {fileID: 21300000, guid: 07321b092aa43b34da476cec5e4dac8e, type: 3}
+  card4: {fileID: 21300000, guid: f2e70941ea324084e9f3b8d42b9f8923, type: 3}
+  card5: {fileID: 21300000, guid: eb9867607832a174eb421d6fe567ad47, type: 3}
+  card6: {fileID: 21300000, guid: d29694de43374174a99fba962ba590e3, type: 3}
+  card7: {fileID: 21300000, guid: 642ae52626953cf4b81a65bcbe7e1a16, type: 3}
+  card8: {fileID: 21300000, guid: 0e7f415caea578d42bd5bad380ed3c42, type: 3}
+  card9: {fileID: 21300000, guid: a14a442ea6ea8f840b283a2c839c9d3b, type: 3}
+  card10: {fileID: 21300000, guid: 3f1df2277da6ee64180df88af6bbf063, type: 3}
+  randomNumber: 0
+  checkValue: 0
 --- !u!1 &1557849255
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +890,7 @@ GameObject:
   - component: {fileID: 1557849258}
   - component: {fileID: 1557849257}
   m_Layer: 5
-  m_Name: Card 1
+  m_Name: Card1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -903,7 +977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46ec6ba8be37edb4aa98ed70471e71a9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -933,7 +1007,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191ce0ba561d81d448736f848f7d824d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  card1: {fileID: 21300000, guid: 46ec6ba8be37edb4aa98ed70471e71a9, type: 3}
   card2: {fileID: 21300000, guid: a031fb9bc99b9854bb71bf8464c85d41, type: 3}
+  card3: {fileID: 21300000, guid: 07321b092aa43b34da476cec5e4dac8e, type: 3}
+  card4: {fileID: 21300000, guid: f2e70941ea324084e9f3b8d42b9f8923, type: 3}
+  card5: {fileID: 21300000, guid: eb9867607832a174eb421d6fe567ad47, type: 3}
+  card6: {fileID: 21300000, guid: d29694de43374174a99fba962ba590e3, type: 3}
+  card7: {fileID: 21300000, guid: 642ae52626953cf4b81a65bcbe7e1a16, type: 3}
+  card8: {fileID: 21300000, guid: 0e7f415caea578d42bd5bad380ed3c42, type: 3}
+  card9: {fileID: 21300000, guid: a14a442ea6ea8f840b283a2c839c9d3b, type: 3}
+  card10: {fileID: 21300000, guid: 3f1df2277da6ee64180df88af6bbf063, type: 3}
+  randomNumber: 0
+  checkValue: 0
 --- !u!1 &1844346966
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,8 +1074,9 @@ GameObject:
   - component: {fileID: 2013782550}
   - component: {fileID: 2013782549}
   - component: {fileID: 2013782548}
+  - component: {fileID: 2013782551}
   m_Layer: 5
-  m_Name: Card 4
+  m_Name: Card4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1077,7 +1163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e7f415caea578d42bd5bad380ed3c42, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1095,3 +1181,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013782546}
   m_CullTransparentMesh: 0
+--- !u!114 &2013782551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013782546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191ce0ba561d81d448736f848f7d824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card1: {fileID: 21300000, guid: 46ec6ba8be37edb4aa98ed70471e71a9, type: 3}
+  card2: {fileID: 21300000, guid: a031fb9bc99b9854bb71bf8464c85d41, type: 3}
+  card3: {fileID: 21300000, guid: 07321b092aa43b34da476cec5e4dac8e, type: 3}
+  card4: {fileID: 21300000, guid: f2e70941ea324084e9f3b8d42b9f8923, type: 3}
+  card5: {fileID: 21300000, guid: eb9867607832a174eb421d6fe567ad47, type: 3}
+  card6: {fileID: 21300000, guid: d29694de43374174a99fba962ba590e3, type: 3}
+  card7: {fileID: 21300000, guid: 642ae52626953cf4b81a65bcbe7e1a16, type: 3}
+  card8: {fileID: 21300000, guid: 0e7f415caea578d42bd5bad380ed3c42, type: 3}
+  card9: {fileID: 21300000, guid: a14a442ea6ea8f840b283a2c839c9d3b, type: 3}
+  card10: {fileID: 21300000, guid: 3f1df2277da6ee64180df88af6bbf063, type: 3}
+  randomNumber: 0
+  checkValue: 0
