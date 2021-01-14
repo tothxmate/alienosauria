@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - OverParent
+  - burger
+  - pizza
+  - pasta
+  - sushi
+  - steak
   layers:
   - Default
   - TransparentFX

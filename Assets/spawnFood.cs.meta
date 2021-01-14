@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 939428cf78a53494199d08435b3a10b0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - burger: {instanceID: 0}
+  - pizza: {instanceID: 0}
+  - pasta: {instanceID: 0}
+  - sushi: {instanceID: 0}
+  - steak: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

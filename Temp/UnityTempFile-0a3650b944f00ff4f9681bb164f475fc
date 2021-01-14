@@ -328,5 +328,8 @@ Assets\changeAnswer.cs
 Assets\changeQuestion.cs
 Assets\checkAnswer.cs
 Assets\compareCards.cs
+Assets\destroyFood.cs
+Assets\eatFood.cs
 Assets\generateCards.cs
 Assets\ringBell.cs
+Assets\spawnFood.cs
