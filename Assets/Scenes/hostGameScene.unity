@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8e3b72c3085e54bbcb8179d102f27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userId: 0
 --- !u!4 &192529807
 Transform:
   m_ObjectHideFlags: 0
@@ -253,6 +254,7 @@ GameObject:
   - component: {fileID: 232428763}
   - component: {fileID: 232428765}
   - component: {fileID: 232428764}
+  - component: {fileID: 232428766}
   m_Layer: 5
   m_Name: Number
   m_TagString: Untagged
@@ -276,8 +278,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000006181, y: 147.78}
-  m_SizeDelta: {x: 156.60666, y: 108.11603}
+  m_AnchoredPosition: {x: -8.0277, y: 147.78}
+  m_SizeDelta: {x: 395.03604, y: 108.114136}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232428764
 MonoBehaviour:
@@ -311,7 +313,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: xy
+  m_Text: 
 --- !u!222 &232428765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -320,6 +322,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232428762}
   m_CullTransparentMesh: 0
+--- !u!114 &232428766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232428762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1e1368b72faf542b28b8033bd549ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNumber: {fileID: 232428762}
+  name: {fileID: 0}
+  players: {fileID: 0}
+  roomNr: YXASDF
+  playersCount: 0
+  inGameName: 
+  sceneNr: 0
 --- !u!1 &254564800
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +493,7 @@ GameObject:
   - component: {fileID: 376132123}
   - component: {fileID: 376132122}
   - component: {fileID: 376132121}
+  - component: {fileID: 376132124}
   m_Layer: 5
   m_Name: Go Button
   m_TagString: Untagged
@@ -541,9 +563,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 192529806}
-        m_MethodName: btn_change_scene
-        m_Mode: 5
+      - m_Target: {fileID: 376132124}
+        m_MethodName: generateRoom
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -589,6 +611,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376132119}
   m_CullTransparentMesh: 0
+--- !u!114 &376132124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376132119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1e1368b72faf542b28b8033bd549ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNumber: {fileID: 232428762}
+  name: {fileID: 1756743519}
+  players: {fileID: 0}
+  roomNr: 
+  playersCount: 0
+  inGameName: 
+  sceneNr: 0
 --- !u!1 &881192005
 GameObject:
   m_ObjectHideFlags: 0

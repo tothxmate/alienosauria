@@ -153,12 +153,12 @@ RectTransform:
   m_Children:
   - {fileID: 338667318}
   - {fileID: 469420398}
-  m_Father: {fileID: 642709286}
-  m_RootOrder: 1
+  m_Father: {fileID: 881930641}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000047684, y: 119}
+  m_AnchoredPosition: {x: -0, y: 119}
   m_SizeDelta: {x: 686.56476, y: 110.63628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192974434
@@ -450,7 +450,7 @@ RectTransform:
   - {fileID: 1853660654}
   - {fileID: 1460477488}
   m_Father: {fileID: 881930641}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -648,7 +648,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 881930641}
-  - {fileID: 192974433}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -686,6 +685,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 192974433}
   - {fileID: 479803512}
   - {fileID: 1926940841}
   m_Father: {fileID: 642709286}
@@ -967,6 +967,7 @@ GameObject:
   - component: {fileID: 1926940844}
   - component: {fileID: 1926940843}
   - component: {fileID: 1926940842}
+  - component: {fileID: 1926940845}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -986,7 +987,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 881930641}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1036,9 +1037,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1931987158}
-        m_MethodName: btn_change_scene
-        m_Mode: 5
+      - m_Target: {fileID: 1926940845}
+        m_MethodName: joinAGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1084,6 +1085,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926940840}
   m_CullTransparentMesh: 0
+--- !u!114 &1926940845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926940840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7e3e89cd87da246afe531eabaf32f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNr: {fileID: 469420397}
+  name: {fileID: 1460477487}
+  roomNumber: 
+  inGameName: 
+  sceneNr: 0
 --- !u!1 &1928320597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,47 +1184,4 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1931987157
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1931987159}
-  - component: {fileID: 1931987158}
-  m_Layer: 0
-  m_Name: ChangeScene
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1931987158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931987157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc8e3b72c3085e54bbcb8179d102f27e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1931987159
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931987157}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 314.44537, y: 580.1421, z: -455.56885}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

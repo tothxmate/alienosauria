@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/gameEater.unity
+- path: Assets/Scenes/joinGameScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
