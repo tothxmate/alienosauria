@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
+[System.Serializable]
 public class joinGame : MonoBehaviour
 
 {

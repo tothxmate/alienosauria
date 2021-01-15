@@ -15,10 +15,7 @@ namespace ConnectionNamespace
             ws = new WebSocket("ws://134.209.249.13:8080");
             ws.Connect();
           
-            ws.OnMessage += (sender, e) =>
-            {
-                Debug.Log(e.Data);
-            };
+         
         }
 
         // Update is called once per frame
