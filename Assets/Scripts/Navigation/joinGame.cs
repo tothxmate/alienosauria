@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class joinGame : MonoBehaviour
 
 {
-
+    public static int userId;
     public GameObject roomNr;
     public GameObject name;
-    public string roomNumber;
-    public string inGameName;
+    public static string roomNumber;
+    public static string inGameName;
     public int sceneNr;
     // Start is called before the first frame update
     void Start()
@@ -31,15 +31,24 @@ public class joinGame : MonoBehaviour
         inGameName = name.GetComponent<Text>().text;
         Debug.Log("The room number is: " + roomNumber);
 
-        if (roomNumber != "" && inGameName != "") {
+        if (roomNumber != "" && inGameName != "")
+        {
             //ide kene a sceneNr-t megkapni a szerotol, h melyik scenere navigaljon
-            sceneNr = 4;
+            sceneNr = 3;
             SceneManager.LoadScene(sceneNr);
+            userId = 121;
             //inGameName-t + roomNumber-t elkuldeni a szeronak
 
         }
-        else {
-            Debug.Log("Please fill in both the room number and the name!");
+        else if (roomNumber != "" && inGameName == "")
+        {
+            Debug.Log("Please fill in your name!");
+        }
+
+        else if (roomNumber == "" && inGameName != "") {
+            Debug.Log("Please fill in the room number!");
         }
     }
+
+  
 }
