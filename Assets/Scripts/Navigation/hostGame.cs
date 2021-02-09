@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Web.Script.Serialization;
+//using SimpleJSON;
+
 
 
 namespace ConnectionNamespace
@@ -17,7 +18,7 @@ namespace ConnectionNamespace
         public int playersCount;
         public string inGameName;
         public static int sceneNr;
-        public string initHostReply;
+        public static string initHostReply;
 
         // Start is called before the first frame update
         void Start()
@@ -29,7 +30,7 @@ namespace ConnectionNamespace
             {
                 initHostReply=e.Data;
             };
-            serialized.CreateFromJSON(initHostReply);
+           // serialized.CreateFromJSON(initHostReply);
             roomNr = serialized.roomNr;
             Debug.Log(roomNr);
 

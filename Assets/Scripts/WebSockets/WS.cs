@@ -12,7 +12,7 @@ namespace ConnectionNamespace
         // Start is called before the first frame update
         void Start()
         {
-            ws = new WebSocket("ws://134.209.249.13:8080");
+            ws = new WebSocket("ws://142.93.103.225/alienosauria");
             ws.Connect();
           
          

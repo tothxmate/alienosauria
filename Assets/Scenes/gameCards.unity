@@ -262,6 +262,10 @@ MonoBehaviour:
   card8: {fileID: 21300000, guid: 0e7f415caea578d42bd5bad380ed3c42, type: 3}
   card9: {fileID: 21300000, guid: a14a442ea6ea8f840b283a2c839c9d3b, type: 3}
   card10: {fileID: 21300000, guid: 3f1df2277da6ee64180df88af6bbf063, type: 3}
+  cardone: {fileID: 0}
+  cardtwo: {fileID: 0}
+  cardthree: {fileID: 0}
+  cardfour: {fileID: 0}
   randomNumber: 0
   checkValue: 0
 --- !u!1 &406235755
@@ -276,7 +280,7 @@ GameObject:
   - component: {fileID: 406235759}
   - component: {fileID: 406235758}
   - component: {fileID: 406235757}
-  - component: {fileID: 406235760}
+  - component: {fileID: 406235761}
   m_Layer: 5
   m_Name: Bell
   m_TagString: Untagged
@@ -346,8 +350,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 406235760}
-        m_MethodName: RingBell
+      - m_Target: {fileID: 406235761}
+        m_MethodName: ShowResults
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -394,18 +398,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406235755}
   m_CullTransparentMesh: 0
---- !u!114 &406235760
+--- !u!114 &406235761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406235755}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a7bf2c66f2d3b1468e78a6464b6b504, type: 3}
+  m_Script: {fileID: 11500000, guid: 191ce0ba561d81d448736f848f7d824d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  card1: {fileID: 0}
+  card2: {fileID: 0}
+  card3: {fileID: 0}
+  card4: {fileID: 0}
+  card5: {fileID: 0}
+  card6: {fileID: 0}
+  card7: {fileID: 0}
+  card8: {fileID: 0}
+  card9: {fileID: 0}
+  card10: {fileID: 0}
+  cardone: {fileID: 0}
+  cardtwo: {fileID: 0}
+  cardthree: {fileID: 0}
+  cardfour: {fileID: 0}
+  randomNumber: 0
+  checkValue: 0
 --- !u!1 &568209420
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +894,10 @@ MonoBehaviour:
   card8: {fileID: 21300000, guid: 0e7f415caea578d42bd5bad380ed3c42, type: 3}
   card9: {fileID: 21300000, guid: a14a442ea6ea8f840b283a2c839c9d3b, type: 3}
   card10: {fileID: 21300000, guid: 3f1df2277da6ee64180df88af6bbf063, type: 3}
+  cardone: {fileID: 0}
+  cardtwo: {fileID: 0}
+  cardthree: {fileID: 0}
+  cardfour: {fileID: 0}
   randomNumber: 0
   checkValue: 0
 --- !u!1 &1557849255
@@ -1017,6 +1041,10 @@ MonoBehaviour:
   card8: {fileID: 21300000, guid: 0e7f415caea578d42bd5bad380ed3c42, type: 3}
   card9: {fileID: 21300000, guid: a14a442ea6ea8f840b283a2c839c9d3b, type: 3}
   card10: {fileID: 21300000, guid: 3f1df2277da6ee64180df88af6bbf063, type: 3}
+  cardone: {fileID: 0}
+  cardtwo: {fileID: 0}
+  cardthree: {fileID: 0}
+  cardfour: {fileID: 0}
   randomNumber: 0
   checkValue: 0
 --- !u!1 &1844346966
@@ -1048,6 +1076,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8e3b72c3085e54bbcb8179d102f27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userId: 0
+  roomId: 0
 --- !u!4 &1844346968
 Transform:
   m_ObjectHideFlags: 0
@@ -1203,5 +1233,9 @@ MonoBehaviour:
   card8: {fileID: 21300000, guid: 0e7f415caea578d42bd5bad380ed3c42, type: 3}
   card9: {fileID: 21300000, guid: a14a442ea6ea8f840b283a2c839c9d3b, type: 3}
   card10: {fileID: 21300000, guid: 3f1df2277da6ee64180df88af6bbf063, type: 3}
+  cardone: {fileID: 0}
+  cardtwo: {fileID: 0}
+  cardthree: {fileID: 0}
+  cardfour: {fileID: 0}
   randomNumber: 0
   checkValue: 0

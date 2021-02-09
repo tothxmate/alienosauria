@@ -16,10 +16,14 @@ public class cardGameChangeCards : MonoBehaviour
      public Sprite card8;
      public Sprite card9;
      public Sprite card10;
+     public GameObject cardone;
+     public GameObject cardtwo;
+     public GameObject cardthree;
+     public GameObject cardfour;
      public int randomNumber;
      public static bool btnPressed=true;
      public ArrayList cardStates = new ArrayList();
-     public int checkValue;
+     public bool checkValue;
 
     // Start is called before the first frame update
     void Start()
@@ -33,34 +37,59 @@ public class cardGameChangeCards : MonoBehaviour
 
     // Update is called once per frame
      void Update(){
-        btnPressed=ringBell.btnPressed;
-    if (btnPressed==false){
-        Debug.Log("I canceled");
-        CancelInvoke("ChangeCards");
-        cardStates.Add(gameObject.GetComponent<Image>().sprite);
-        foreach(var item in cardStates)
+        if (btnPressed == false) 
+        { 
+            CancelInvoke("ChangeCards"); 
+        }
+       
+    }
+    
+   public void ShowResults()
+    {
+        btnPressed = false;
+         Debug.Log("I canceled the invoke");
+         CancelInvoke("ChangeCards");
+        cardone = GameObject.Find("Card1");
+        cardtwo = GameObject.Find("Card2");
+        cardthree = GameObject.Find("Card3");
+        cardfour = GameObject.Find("Card4");
+
+
+        cardStates.Add(cardone.GetComponent<Image>().sprite);
+        cardStates.Add(cardtwo.GetComponent<Image>().sprite);
+        cardStates.Add(cardthree.GetComponent<Image>().sprite);
+        cardStates.Add(cardfour.GetComponent<Image>().sprite);
+        foreach (var item in cardStates)
         {
             Debug.Log("The nodes of MDG are:" + item);
         }
-    
-        for (int i=1; i<=4; i++)
-{
-    
-      if(cardStates[i] == cardStates[i-1])
-      {
-            Debug.Log("You won!");
-      }
-      else
-      {
-          Debug.Log("You lost you loser piece of shit!");
-      }
-}
+        Debug.Log("kartya 1= " + cardStates[0]);
+        for (int i = 0; i <= 3; i++)
+        {
 
-        enabled = false;
-    }
+            if (cardStates[i] == cardStates[i - 1])
+            {
+                Debug.Log("You won!");
+                WonGame();
+            }
+            else
+            {
+                Debug.Log("You lost you loser piece of shit!");
+                LostGame;
+            }
         }
+      //  return;
+
+    }
+
+   public void WonGame() {
     
     
+   }
+
+   public void LostGame() {
+    
+   }
     
    void ChangeCards()
    {
