@@ -115,10 +115,9 @@ public class cardGameChangeCards : MonoBehaviour
             lostgame.gameObject.GetComponent<Image>().enabled = false;
             nextgame.gameObject.GetComponent<Image>().enabled = true;
             Debug.Log("countdown= " + countdown);
-            if (countdown < 1) {
-                countdown -= Time.deltaTime;
-                SceneManager.LoadScene(4);
-            }
+            countdown -= Time.deltaTime;
+            SceneManager.LoadScene(7);
+            
             
             
         }
