@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gameQuiz.unity
     guid: fcd6bd0cae994d748b9188ae1833fdb8
+  - enabled: 1
+    path: Assets/Scenes/roundSwitch.unity
+    guid: acc8f0b87e779ae4f8e00e988e5d9de6
   m_configObjects: {}
