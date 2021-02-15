@@ -126,6 +126,8 @@ public class cardGameChangeCards : MonoBehaviour
     
    public void ShowResults()
     {
+
+        
         btnPressed = false;
          Debug.Log("I canceled the invoke");
          CancelInvoke("ChangeCards");
@@ -148,9 +150,9 @@ public class cardGameChangeCards : MonoBehaviour
         {
             for (int s = 0; s <= 3; s++) {
                
-                if (cardStates[i] == cardStates[s] && i != s && counter == 0)
+                if (cardStates[i] == cardStates[s])
                 {
-                    counter++;
+                    Debug.Log("Dont click that yet");
                     //Debug.Log("You won!");
                     
                     
@@ -159,10 +161,10 @@ public class cardGameChangeCards : MonoBehaviour
                     //Debug.Log("Lefutott");
                     //WonGame();
                 }
-                else
+                else if (cardStates[i] == cardStates[s] && i != s && counter == 0)
                 {
-                    //Debug.Log("You lost you loser piece of shit!");
                     
+                    counter++;
                     //lostgame = GameObject.Find("GameLost");
                     //lostgame.active = true;
                     //Debug.Log("Lefutott");
