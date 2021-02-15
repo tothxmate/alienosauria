@@ -20,6 +20,7 @@ namespace ConnectionNamespace
         public static string userid;
 
         string msg;
+        string amount_joined;
 
         responseMessage res;
         requestMessage req;
@@ -47,6 +48,8 @@ namespace ConnectionNamespace
                         {
 
                         }
+                    case "getJoinedPlayerAmount":
+                        amount_joined = res.response;
                         break;
                 }
             };
@@ -62,9 +65,10 @@ namespace ConnectionNamespace
 
         }
 
-        public void BackButton(){
-        
-        SceneManager.LoadScene(0);
+        public void BackButton()
+        {
+
+            SceneManager.LoadScene(0);
         }
 
         public void generateRoom()
