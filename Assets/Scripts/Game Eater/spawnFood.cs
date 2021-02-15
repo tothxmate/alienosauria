@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class spawnFood : MonoBehaviour
 {
@@ -12,6 +15,8 @@ public class spawnFood : MonoBehaviour
     float nextSpawn = 0f;
 
     int whatToSpawn;
+
+    float checkTime = 21;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +26,12 @@ public class spawnFood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > nextSpawn) {
+        checkTime -= Time.deltaTime;
+        if (Time.time > nextSpawn && checkTime > 1) {
+            
             whatToSpawn = Random.Range(1, 6);
             Debug.Log(whatToSpawn);
+            Debug.Log(checkTime);
 
             switch (whatToSpawn) {
 
@@ -56,6 +64,11 @@ public class spawnFood : MonoBehaviour
 
             }
             nextSpawn = Time.time + spawnRate;
+        }
+
+        else if (checkTime <= 0) {
+            //count points
+            SceneManager.LoadScene(7);
         }
     }
 

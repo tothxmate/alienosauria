@@ -16,7 +16,7 @@ public class changeAnswer : MonoBehaviour
         Text answer3 = GameObject.Find("Canvas/Panel/Answer3/Text").GetComponent<Text>();
         answer3.text = "Yet an other answer";
         Text answer4 = GameObject.Find("Canvas/Panel/Answer4/Text").GetComponent<Text>();
-        answer4.text = "Gtfo bitch";
+        answer4.text = "And an other answer";
         //getAnswers();
         //setAnswers();
     }

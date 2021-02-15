@@ -113,7 +113,7 @@ public class cardGameChangeCards : MonoBehaviour
             CancelInvoke("ChangeCards");
             wongame.gameObject.GetComponent<Image>().enabled = false;
             lostgame.gameObject.GetComponent<Image>().enabled = false;
-            nextgame.gameObject.GetComponent<Image>().enabled = true;
+           // nextgame.gameObject.GetComponent<Image>().enabled = true;
             Debug.Log("countdown= " + countdown);
             countdown -= Time.deltaTime;
             SceneManager.LoadScene(7);

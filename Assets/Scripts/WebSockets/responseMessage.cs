@@ -1,17 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 
 namespace ConnectionNamespace
 {
-    public class basicMessage
+    [Serializable]
+    public class responseMessage
     {
+        public string userid;
+        public string response;
         public string action;
-        public basicMessage(string useraction)
-        {
-
-            action = useraction;
-        }
     }
 }

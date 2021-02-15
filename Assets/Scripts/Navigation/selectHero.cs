@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+namespace ConnectionNamespace{
+
 public class selectHero : MonoBehaviour
 {
 
@@ -11,6 +13,7 @@ public class selectHero : MonoBehaviour
     string inGameName;
     string roomNumber;
     int sceneNr;
+    bool isHost=true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,20 @@ public class selectHero : MonoBehaviour
     {
         
     }
+
+    public void BackButton(){
+        if (isHost == true){
+        SceneManager.LoadScene(1);
+        }
+        else if (isHost == false){
+        SceneManager.LoadScene(2);
+        }
+        
+        
+    }
+    
+        
+    
 
     public void startGame() {
         hero = buttonSelect.hero;
@@ -45,4 +62,5 @@ public class selectHero : MonoBehaviour
         
     }
 
+}
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace ConnectionNamespace{
+
 public class changeQuestion : MonoBehaviour
 {
 
@@ -29,4 +31,5 @@ public class changeQuestion : MonoBehaviour
         question.text = "What are the odds of winning this game?";
 
     }
+}
 }

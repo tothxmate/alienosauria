@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+namespace ConnectionNamespace{
+
 public class checkAnswer : MonoBehaviour
 {
     public changeQuestion changeQuestion;
@@ -42,6 +44,7 @@ public class checkAnswer : MonoBehaviour
         
     
     }
+}
 }
 
 

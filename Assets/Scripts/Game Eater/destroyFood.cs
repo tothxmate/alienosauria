@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class destroyFood : MonoBehaviour
 {
+
+    public static int points;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +18,15 @@ public class destroyFood : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision) {
+   /* void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "burger" || collision.gameObject.tag == "pizza" || collision.gameObject.tag == "pasta" || collision.gameObject.tag == "sushi" || collision.gameObject.tag == "steak") {
 
             Destroy(collision.gameObject);
+            points++;
+            Debug.Log("Poitns"+points);
         
         
         }
     
-    }
+    }*/
 }
