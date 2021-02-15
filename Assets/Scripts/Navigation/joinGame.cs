@@ -19,8 +19,6 @@ namespace ConnectionNamespace
         // Start is called before the first frame update
         void Start()
         {
-            basicMessage msg = new basicMessage("initGuest");
-            WS.ws.Send(JsonUtility.ToJson(msg));
             WS.ws.OnMessage += (sender, e) =>
             {
                 res = JsonUtility.FromJson<responseMessage>(e.Data);
@@ -46,16 +44,21 @@ namespace ConnectionNamespace
 
         }
 
-        public void BackButton(){
-        
-        SceneManager.LoadScene(0);
+        public void BackButton()
+        {
+
+            SceneManager.LoadScene(0);
         }
 
 
         public void joinAGame()
         {
+
             roomNumber = roomNr.GetComponent<Text>().text;
             inGameName = name.GetComponent<Text>().text;
+            string msg = "{\"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
+            WS.ws.Send(msg);
+            /*
             Debug.Log("The room number is: " + roomNumber);
 
             if (roomNumber != "" && inGameName != "")
@@ -75,7 +78,7 @@ namespace ConnectionNamespace
             else if (roomNumber == "" && inGameName != "")
             {
                 Debug.Log("Please fill in the room number!");
-            }
+            }*/
         }
 
 
