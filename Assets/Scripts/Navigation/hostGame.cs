@@ -48,6 +48,7 @@ namespace ConnectionNamespace
                         {
 
                         }
+                        break;
                     case "getJoinedPlayerAmount":
                         amount_joined = res.response;
                         break;
