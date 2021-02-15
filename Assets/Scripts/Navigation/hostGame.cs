@@ -48,6 +48,7 @@ namespace ConnectionNamespace
                         {
 
                         }
+                        break;
                     case "getJoinedPlayerAmount":
                         amount_joined = res.response;
                         break;
@@ -62,7 +63,7 @@ namespace ConnectionNamespace
         // Update is called once per frame
         void Update()
         {
-
+            players.GetComponent<Text>().text = amount_joined;
         }
 
         public void BackButton()
