@@ -29,15 +29,18 @@ public class cardGameChangeCards : MonoBehaviour
      public ArrayList cardStates = new ArrayList();
      public bool checkValue;
      public int counter = 0;
+     
     public static int status = 0;
     public int round = 0;
     public float countdown = 3;
     public bool ingame = false;
     public bool lastgame = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
+        
         round = 1;
     if (btnPressed){
     InvokeRepeating("ChangeCards",2,2);
@@ -126,6 +129,8 @@ public class cardGameChangeCards : MonoBehaviour
     
    public void ShowResults()
     {
+
+        
         btnPressed = false;
          Debug.Log("I canceled the invoke");
          CancelInvoke("ChangeCards");
@@ -151,6 +156,8 @@ public class cardGameChangeCards : MonoBehaviour
                 if (cardStates[i] == cardStates[s] && i != s && counter == 0)
                 {
                     counter++;
+                    
+                    
                     //Debug.Log("You won!");
                     
                     
@@ -159,9 +166,10 @@ public class cardGameChangeCards : MonoBehaviour
                     //Debug.Log("Lefutott");
                     //WonGame();
                 }
-                else
+                else if (cardStates[i] == cardStates[s])
                 {
-                    //Debug.Log("You lost you loser piece of shit!");
+                    
+                    Debug.Log("Dont click that yet");
                     
                     //lostgame = GameObject.Find("GameLost");
                     //lostgame.active = true;
