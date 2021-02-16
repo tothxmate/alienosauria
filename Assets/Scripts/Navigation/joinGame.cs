@@ -15,6 +15,7 @@ namespace ConnectionNamespace
         public static string roomNumber;
         public static string inGameName;
         public int sceneNr;
+        string msg;
         responseMessage res;
         // Start is called before the first frame update
         void Start()
@@ -53,11 +54,19 @@ namespace ConnectionNamespace
 
         public void joinAGame()
         {
+            Debug.Log("Leasdsafut");
+
 
             roomNumber = roomNr.GetComponent<Text>().text;
             inGameName = name.GetComponent<Text>().text;
-            string msg = "{\"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
+
+            Debug.Log(inGameName);
+            Debug.Log(roomNumber);
+            
+            msg = "{\"action\": \"initGuest\",\"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
+            Debug.Log(msg);
             WS.ws.Send(msg);
+            Debug.Log("Lefut");
             /*
             Debug.Log("The room number is: " + roomNumber);
 

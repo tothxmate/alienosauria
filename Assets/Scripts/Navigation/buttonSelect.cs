@@ -20,6 +20,6 @@ public class buttonSelect : MonoBehaviour
     public void ButtonInteract(){
 
         hero = EventSystem.current.currentSelectedGameObject.name;
-        Debug.Log(hero);
+        
     }
 }

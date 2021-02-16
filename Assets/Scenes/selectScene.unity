@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 19225056}
   - component: {fileID: 19225055}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Name4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 7, y: -190}
-  m_SizeDelta: {x: 128.37088, y: 46.56761}
+  m_SizeDelta: {x: 180, y: 46.56761}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19225055
 MonoBehaviour:
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 31930136}
   - component: {fileID: 31930133}
   m_Layer: 5
-  m_Name: Dino 4
+  m_Name: Dino4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 1239274273}
   - component: {fileID: 1239274272}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Name2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,7 +559,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 8, y: 190}
-  m_SizeDelta: {x: 128.37088, y: 46.56761}
+  m_SizeDelta: {x: 180, y: 46.56761}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1239274272
 MonoBehaviour:
@@ -653,6 +653,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cebea52a64c164459d0c8502ff703a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name1: {fileID: 0}
+  name2: {fileID: 0}
+  name3: {fileID: 0}
+  name4: {fileID: 0}
+  player1: 
+  player2: 
+  player3: 
 --- !u!114 &1261818812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,7 +763,7 @@ GameObject:
   - component: {fileID: 1283255816}
   - component: {fileID: 1283255815}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Name3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -779,7 +786,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.0000066757, y: -190}
-  m_SizeDelta: {x: 128.37088, y: 46.56761}
+  m_SizeDelta: {x: 180, y: 46.56761}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283255815
 MonoBehaviour:
@@ -836,7 +843,7 @@ GameObject:
   - component: {fileID: 1393389766}
   - component: {fileID: 1393389763}
   m_Layer: 5
-  m_Name: Dino 2
+  m_Name: Dino2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -979,7 +986,7 @@ GameObject:
   - component: {fileID: 1422008267}
   - component: {fileID: 1422008270}
   m_Layer: 5
-  m_Name: Dino 1
+  m_Name: Dino1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1405,6 +1412,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cebea52a64c164459d0c8502ff703a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name1: {fileID: 0}
+  name2: {fileID: 0}
+  name3: {fileID: 0}
+  name4: {fileID: 0}
+  player1: 
+  player2: 
+  player3: 
 --- !u!1 &1712051674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,7 +1497,7 @@ GameObject:
   - component: {fileID: 1761567905}
   - component: {fileID: 1761567904}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Name1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1506,7 +1520,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000086075, y: 190}
-  m_SizeDelta: {x: 128.37088, y: 46.56761}
+  m_SizeDelta: {x: 180, y: 46.56761}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1761567904
 MonoBehaviour:
@@ -1563,7 +1577,7 @@ GameObject:
   - component: {fileID: 1937790771}
   - component: {fileID: 1937790768}
   m_Layer: 5
-  m_Name: Dino 3
+  m_Name: Dino3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
