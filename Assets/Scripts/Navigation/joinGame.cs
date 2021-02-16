@@ -53,10 +53,9 @@ namespace ConnectionNamespace
 
         public void joinAGame()
         {
-
             roomNumber = roomNr.GetComponent<Text>().text;
             inGameName = name.GetComponent<Text>().text;
-            string msg = "{\"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
+            string msg = "{\"action\":\"initGuest\", \"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
             WS.ws.Send(msg);
             /*
             Debug.Log("The room number is: " + roomNumber);
