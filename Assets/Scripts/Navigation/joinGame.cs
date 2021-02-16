@@ -54,17 +54,9 @@ namespace ConnectionNamespace
 
         public void joinAGame()
         {
-            Debug.Log("Leasdsafut");
-
-
             roomNumber = roomNr.GetComponent<Text>().text;
             inGameName = name.GetComponent<Text>().text;
-
-            Debug.Log(inGameName);
-            Debug.Log(roomNumber);
-            
-            msg = "{\"action\": \"initGuest\",\"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
-            Debug.Log(msg);
+            string msg = "{\"action\":\"initGuest\", \"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
             WS.ws.Send(msg);
             Debug.Log("Lefut");
             /*
