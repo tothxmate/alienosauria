@@ -36,6 +36,7 @@ public class cardGameChangeCards : MonoBehaviour
     public bool ingame = false;
     public bool lastgame = false;
 
+    requestMessage req;
 
     // Start is called before the first frame update
     void Start()
@@ -124,10 +125,6 @@ public class cardGameChangeCards : MonoBehaviour
             // nextgame.gameObject.GetComponent<Image>().enabled = true;
             Debug.Log("countdown= " + countdown);
             countdown -= Time.deltaTime;
-            SceneManager.LoadScene(7);
-
-
-
         }
 
     }
