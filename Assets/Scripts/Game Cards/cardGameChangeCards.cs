@@ -6,6 +6,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 namespace ConnectionNamespace{
+<<<<<<< HEAD
+=======
+
+>>>>>>> 28ef5411f98a39103c42df29cbd8b09109da8f20
 public class cardGameChangeCards : MonoBehaviour
 {
     public Sprite card1;
