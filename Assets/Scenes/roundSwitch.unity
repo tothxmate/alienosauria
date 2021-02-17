@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4d0ec4bdae2234b9f104c2c83aeca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 4
+  countdown: 6
   myscore: 50
   converter: 
   counter: {fileID: 0}
@@ -844,7 +844,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 5
 --- !u!222 &1926378892
 CanvasRenderer:
   m_ObjectHideFlags: 0

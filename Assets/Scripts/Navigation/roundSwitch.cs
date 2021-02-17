@@ -29,6 +29,12 @@ public class roundSwitch : MonoBehaviour
         if (countdown > 0) {
             countdown -= Time.deltaTime;
         }
+        if (countdown < 6 && countdown > 4){
+            counter.GetComponent<Text>().text = "5";
+        }
+         if (countdown < 5 && countdown > 3){
+            counter.GetComponent<Text>().text = "4";
+        }
         if (countdown < 4 && countdown > 2){
             counter.GetComponent<Text>().text = "3";
         }
