@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+namespace ConnectionNamespace{
+
 public class buttonSelect : MonoBehaviour
 {
     public static string hero;
@@ -18,8 +20,10 @@ public class buttonSelect : MonoBehaviour
         
     }
     public void ButtonInteract(){
-
+        selectHero h = new selectHero();
         hero = EventSystem.current.currentSelectedGameObject.name;
-        Debug.Log(hero);
+        h.setSelection();
+        
     }
+}
 }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class roundSwitch : MonoBehaviour
 {
 
-    public float countdown = 4;
+    public float countdown = 6;
     public int myscore;
     public string converter;
     public GameObject counter;

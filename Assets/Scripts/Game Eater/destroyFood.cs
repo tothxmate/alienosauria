@@ -18,7 +18,7 @@ public class destroyFood : MonoBehaviour
         
     }
 
-   /* void OnCollisionEnter(Collision collision) {
+    void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "burger" || collision.gameObject.tag == "pizza" || collision.gameObject.tag == "pasta" || collision.gameObject.tag == "sushi" || collision.gameObject.tag == "steak") {
 
             Destroy(collision.gameObject);
@@ -28,5 +28,5 @@ public class destroyFood : MonoBehaviour
         
         }
     
-    }*/
+    }
 }

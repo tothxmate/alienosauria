@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+using WebSocketSharp;
+
 namespace ConnectionNamespace
 {
     public class hostGame : MonoBehaviour
@@ -17,9 +19,8 @@ namespace ConnectionNamespace
         public static int sceneNr;
         public static string initHostReply;
 
-        public static string userid;
-
         string msg;
+        string amount_joined;
 
         responseMessage res;
         requestMessage req;
@@ -27,9 +28,12 @@ namespace ConnectionNamespace
         // Start is called before the first frame update
         void Start()
         {
+            WS.role = "host";
+            WS.ws = new WebSocket("ws://kutyadoki.hu/socket/");
+            WS.ws.Connect();
             roomNumber = GameObject.Find("Number");
             inputName = GameObject.Find("NameText");
-
+            Debug.Log("dasd");
             basicMessage msg = new basicMessage("initHost");
             WS.ws.Send(JsonUtility.ToJson(msg));
             WS.ws.OnMessage += (sender, e) =>
@@ -39,14 +43,12 @@ namespace ConnectionNamespace
                 {
                     case "initHost":
                         roomNr = res.response;
-                        userid = res.userid;
+                        WS.userid_global = res.userid;
                         Debug.Log(roomNr);
                         break;
-                    case "setPlayerName":
-                        if (res.response == "OK")
-                        {
-
-                        }
+                    case "getJoinedPlayerAmount":
+                        amount_joined = res.response;
+                        players.GetComponent<Text>().text = amount_joined;
                         break;
                 }
             };
@@ -54,45 +56,48 @@ namespace ConnectionNamespace
             {
                 roomNumber.GetComponent<Text>().text = roomNr;
             }
+            
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            
         }
 
-        public void BackButton(){
         
-        SceneManager.LoadScene(0);
-        }
 
         public void generateRoom()
         {
             //ide kene a sceneNr-t megkapni a szerotol, h melyik scenere navigaljon (vagy akar itt is lehet generalni es a szeronak elkuldeni)
             // + a playersCountot meg kene szerezni
             //playersCount = 4;
+            popup p = new popup();
             inGameName = inputName.GetComponent<Text>().text;
             Debug.Log(inGameName);
 
-            req = new requestMessage(userid, inGameName, "setPlayerName");
-            WS.ws.Send(JsonUtility.ToJson(req));
-            /*
-            if (playersCount == 4 && inGameName != "")
+            
+            
+            if (inGameName != "")
             {
+                req = new requestMessage(WS.userid_global, inGameName, "setPlayerName");
+                WS.ws.Send(JsonUtility.ToJson(req));
                 //inGameName-t elkuldeni a szeronak
-                sceneNr = 4;
-                Debug.Log("Game has started successfully");
+                sceneNr = 3;
+                
                 SceneManager.LoadScene(sceneNr);
             }
-            else
+            else if (inGameName == "")
             {
-                Debug.Log("Wait for the players to join and enter your name!");
+
+                Debug.Log("Enter your name!!!!!");
+                p.popupWindow("Please fill in your name!");
 
             }
-*/
 
         }
+
+
 
     }
 }

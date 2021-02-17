@@ -10,7 +10,6 @@ public class checkAnswer : MonoBehaviour
 {
     public changeQuestion changeQuestion;
     public static int checkValue = 0;
-    int userId;
     //public joinGame joinGame;
     //public int userId;
     //changeQuestion script = gameObject.GetComponent<changeQuestion>();
@@ -35,8 +34,7 @@ public class checkAnswer : MonoBehaviour
             checkValue++;
             Debug.Log("You clicked on the butt" + EventSystem.current.currentSelectedGameObject.name);
             Debug.Log("checkvalue = " + checkValue);
-            userId = joinGame.userId;
-            Debug.Log("The userID is: " + userId);
+            Debug.Log("The userID is: " + WS.userid_global);
             changeQuestion.changeTheQuestion();
             
         }
