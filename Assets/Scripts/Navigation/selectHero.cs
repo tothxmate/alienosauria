@@ -26,7 +26,7 @@ public class selectHero : MonoBehaviour
     string hero;
     string inGameName;
     string roomNumber;
-    int sceneNr;
+    int sceneNr=0;
     
     int selected;
     public ArrayList taken = new ArrayList();
@@ -38,6 +38,7 @@ public class selectHero : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Debug.Log("1");
         name1 = GameObject.Find("Name1");
         name2 = GameObject.Find("Name2");
@@ -82,7 +83,8 @@ public class selectHero : MonoBehaviour
                         Debug.Log("NEW MESSAGE BITCHES");
                         Debug.Log(res.response);
                         if(res.response!="ERROR"){
-                            startGame(res.response);
+                            //startGame(res.response);
+                             sceneNr = int.Parse(res.response);
                         }else{
                             Debug.Log("wait till everyone chooses character");
                         }
@@ -103,8 +105,9 @@ public class selectHero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+        if(sceneNr!=0){
+        SceneManager.LoadScene(sceneNr);
+        }
        // setSelection();
         //getSelection();
         playername1 = "Janos";
@@ -210,8 +213,8 @@ public class selectHero : MonoBehaviour
 
     public void startGame(string gameNr){
         Debug.Log("startgame");
-        //SceneManager.LoadScene(int.Parse(gameNr));
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(int.Parse(gameNr));
+        
         Debug.Log("startgame");
     }
 

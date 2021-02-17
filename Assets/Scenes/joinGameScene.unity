@@ -680,14 +680,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 515692079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7e3e89cd87da246afe531eabaf32f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a9be0c5e6e2b1d47839fac83cbcee6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNr: {fileID: 0}
-  name: {fileID: 0}
-  popupObject: {fileID: 0}
-  popupText: {fileID: 0}
-  sceneNr: 0
 --- !u!114 &515692082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,7 +728,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 515692081}
         m_MethodName: BackButton
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
