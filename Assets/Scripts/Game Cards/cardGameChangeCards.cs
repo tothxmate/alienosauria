@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+namespace ConnectionNamespace{
+
 public class cardGameChangeCards : MonoBehaviour
 {
     public Sprite card1;
@@ -297,4 +299,5 @@ public class cardGameChangeCards : MonoBehaviour
 
 
 
+}
 }
