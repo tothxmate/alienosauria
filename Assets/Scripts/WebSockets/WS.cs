@@ -14,6 +14,7 @@ namespace ConnectionNamespace
         public static int foodGamePoints = 0;
         public static int cardGamePoints = 0;
         public static int quizGamePoints = 0;
+        public static int roundNr = 0;
         // Start is called before the first frame update
     }
 }

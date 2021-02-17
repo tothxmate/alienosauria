@@ -23,6 +23,7 @@ public class spawnFood : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        WS.roundNr++;
     }
 
     // Update is called once per frame
@@ -72,7 +73,13 @@ public class spawnFood : MonoBehaviour
             //count points
             req = new requestMessage(WS.userid_global, ""+WS.foodGamePoints, "addScore");
             WS.ws.Send(JsonUtility.ToJson(req));
-            SceneManager.LoadScene(7);
+             if(WS.roundNr < 3){
+                SceneManager.LoadScene(7);
+                
+            }
+            else {
+                SceneManager.LoadScene(9);
+            }
         }
     }
 

@@ -861,6 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db4c00d91e441d4aae831eff802cb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCount: 3
   entry: {fileID: 2827657785824875158, guid: 6152e31f96fcc4c4fb5084f916a151cc, type: 3}
 --- !u!1 &1862663322
 GameObject:

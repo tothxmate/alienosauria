@@ -17,7 +17,7 @@ public class buttons : MonoBehaviour
         
     }
 
-    public void BackButton(int number, string role)
+    public void BackButton(int number)
         {
                 
             SceneManager.LoadScene(number);

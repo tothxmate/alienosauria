@@ -6,10 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 namespace ConnectionNamespace{
-<<<<<<< HEAD
-=======
-
->>>>>>> 28ef5411f98a39103c42df29cbd8b09109da8f20
 public class cardGameChangeCards : MonoBehaviour
 {
     public Sprite card1;
@@ -46,6 +42,7 @@ public class cardGameChangeCards : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        WS.roundNr++;
 
         round = 1;
         
@@ -131,7 +128,14 @@ public class cardGameChangeCards : MonoBehaviour
             countdown -= Time.deltaTime;
             req = new requestMessage(WS.userid_global, ""+WS.cardGamePoints, "addScore");
             WS.ws.Send(JsonUtility.ToJson(req));
-            SceneManager.LoadScene(7);
+            
+            if(WS.roundNr < 3){
+                SceneManager.LoadScene(7);
+                
+            }
+            else {
+                SceneManager.LoadScene(9);
+            }
         }
 
     }
