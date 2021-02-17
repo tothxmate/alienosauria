@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+namespace ConnectionNamespace{
 public class cardGameChangeCards : MonoBehaviour
 {
     public Sprite card1;
@@ -32,7 +33,7 @@ public class cardGameChangeCards : MonoBehaviour
 
     public static int status = 0;
     public int round = 0;
-    public float countdown = 3;
+    public float countdown = 1;
     public bool ingame = false;
     public bool lastgame = false;
 
@@ -43,10 +44,10 @@ public class cardGameChangeCards : MonoBehaviour
     {
 
         round = 1;
-        if (btnPressed)
-        {
-            InvokeRepeating("ChangeCards", 2, 2);
-        }
+        
+        
+        InvokeRepeating("ChangeCards", 1, 2);
+        
 
         wongame = GameObject.Find("GameWon");
         lostgame = GameObject.Find("GameLost");
@@ -79,9 +80,8 @@ public class cardGameChangeCards : MonoBehaviour
 
         }
         else if (status == 2 && btnPressed == false)
-        {
+        {   
             status = 0;
-            Debug.Log("you won" + status);
             wongame.gameObject.GetComponent<Image>().enabled = true;
             round++;
             Debug.Log("ROund: " + round);
@@ -89,7 +89,7 @@ public class cardGameChangeCards : MonoBehaviour
 
         }
 
-        if (round < 6 && countdown >= 0 && btnPressed == false)
+        if (round < 21 && countdown >= 0 && btnPressed == false)
         {
 
             countdown -= Time.deltaTime;
@@ -105,9 +105,9 @@ public class cardGameChangeCards : MonoBehaviour
             // cardStates.Clear();
 
             InvokeRepeating("ChangeCards", 0, 2);
-            countdown = 3;
+            countdown = 1;
             Debug.Log("CUNTDOWN" + countdown);
-            if (round == 5)
+            if (round == 20)
             {
                 lastgame = true;
                 CancelInvoke("ChangeCards");
@@ -125,6 +125,9 @@ public class cardGameChangeCards : MonoBehaviour
             // nextgame.gameObject.GetComponent<Image>().enabled = true;
             Debug.Log("countdown= " + countdown);
             countdown -= Time.deltaTime;
+            req = new requestMessage(WS.userid_global, ""+WS.cardGamePoints, "addScore");
+            WS.ws.Send(JsonUtility.ToJson(req));
+            SceneManager.LoadScene(7);
         }
 
     }
@@ -155,26 +158,10 @@ public class cardGameChangeCards : MonoBehaviour
         {
             for (int s = 0; s <= 3; s++)
             {
-
-                if (cardStates[i] == cardStates[s])
+                if (cardStates[i] == cardStates[s] && i != s && counter == 0)
                 {
                     counter++;
-
-
-                    //Debug.Log("You won!");
-
-
-                    // wongame = GameObject.Find("GameWon");
-                    // wongame.active = true;
-                    //Debug.Log("Lefutott");
-                    //WonGame();
-                }
-                else if (cardStates[i] == cardStates[s])
-                {
-
-                    Debug.Log("Dont click that yet");
-
-                    counter++;
+                    
                     //lostgame = GameObject.Find("GameLost");
                     //lostgame.active = true;
                     //Debug.Log("Lefutott");
@@ -197,10 +184,11 @@ public class cardGameChangeCards : MonoBehaviour
         else if (counter > 0)
         {
 
-            Debug.Log("you won");
+            Debug.Log("you won counter"+counter);
             counter = 0;
             status = 2;
             cardStates.Clear();
+            WS.cardGamePoints++;
 
         }
 
@@ -226,70 +214,70 @@ public class cardGameChangeCards : MonoBehaviour
             case 1:
                 this.gameObject.GetComponent<Image>().sprite = card1;
                 // Debug.Log("The actual image is:" + this.gameObject.GetComponent<Image>().sprite);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 //Debug.Log("Wait is over");
                 break;
 
             case 2:
                 this.gameObject.GetComponent<Image>().sprite = card2;
                 // Debug.Log("The actual image is:" + this.gameObject.GetComponent<Image>().sprite);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 // Debug.Log("Wait is over");
                 break;
 
             case 3:
                 this.gameObject.GetComponent<Image>().sprite = card3;
                 // Debug.Log("The actual image is:" + this.gameObject.GetComponent<Image>().sprite);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 // Debug.Log("Wait is over");
                 break;
 
             case 4:
                 this.gameObject.GetComponent<Image>().sprite = card4;
                 // Debug.Log("The actual image is:" + this.gameObject.GetComponent<Image>().sprite);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 // Debug.Log("Wait is over");
                 break;
 
             case 5:
                 this.gameObject.GetComponent<Image>().sprite = card5;
                 //  Debug.Log("The actual image is:" + this.gameObject.GetComponent<Image>().sprite);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 //  Debug.Log("Wait is over");
                 break;
 
             case 6:
                 this.gameObject.GetComponent<Image>().sprite = card6;
                 // Debug.Log("The actual image is:" + this.gameObject.GetComponent<Image>().sprite);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 // Debug.Log("Wait is over");
                 break;
 
             case 7:
                 this.gameObject.GetComponent<Image>().sprite = card7;
                 //  Debug.Log("The actual image is:" + this.gameObject.GetComponent<Image>().sprite);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 // Debug.Log("Wait is over");
                 break;
 
             case 8:
                 this.gameObject.GetComponent<Image>().sprite = card8;
                 // Debug.Log("The actual image is:" + this.gameObject.GetComponent<Image>().sprite);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 //  Debug.Log("Wait is over");
                 break;
 
             case 9:
                 this.gameObject.GetComponent<Image>().sprite = card9;
                 // Debug.Log("The actual image is:" + this.gameObject.GetComponent<Image>().sprite);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 // Debug.Log("Wait is over");
                 break;
 
             case 10:
                 this.gameObject.GetComponent<Image>().sprite = card10;
                 // Debug.Log("The actual image is:" + this.gameObject.GetComponent<Image>().sprite);
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
                 // Debug.Log("Wait is over");
                 break;
         }
@@ -297,4 +285,5 @@ public class cardGameChangeCards : MonoBehaviour
 
 
 
+}
 }

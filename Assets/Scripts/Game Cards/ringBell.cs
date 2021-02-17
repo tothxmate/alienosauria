@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+namespace ConnectionNamespace{
 public class ringBell : MonoBehaviour
 {
 
@@ -28,4 +30,5 @@ public class ringBell : MonoBehaviour
     btnPressed=false;
     Debug.Log("Card one image: "+gameObject.GetComponent<Image>().sprite);
    }
+}
 }
