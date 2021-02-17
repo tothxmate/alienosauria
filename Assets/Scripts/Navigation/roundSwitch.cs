@@ -4,23 +4,45 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+namespace ConnectionNamespace{
+
 public class roundSwitch : MonoBehaviour
 {
 
-    public float countdown = 6;
+    public float countdown = 5;
     public int myscore;
     public string converter;
     public GameObject counter;
     public GameObject score;
+    int nextScene = 0;
+    int updateCount = 0;
+    responseMessage res;
+    requestMessage req;
+
     // Start is called before the first frame update
     void Start()
     {
         counter = GameObject.Find("Countdown");
         score = GameObject.Find("Score");
-        myscore = 200;
-        converter = ""+myscore;
-        Debug.Log("Converter = "+myscore);
-        score.GetComponent<Text>().text = converter;
+
+        req = new requestMessage(WS.userid_global, "", "getScore");
+        WS.ws.Send(JsonUtility.ToJson(req));
+
+        WS.ws.OnMessage += (sender, e) =>
+        {
+            res = JsonUtility.FromJson<responseMessage>(e.Data);
+            switch (res.action)
+            {
+                case "getScore":
+                    myscore = int.Parse(res.response);
+                    converter = ""+myscore;
+                    score.GetComponent<Text>().text = converter;
+                break;
+                case "getNextGame":
+                    nextScene = int.Parse(res.response);
+                break;
+            }
+        };
     }
 
     // Update is called once per frame
@@ -38,19 +60,11 @@ public class roundSwitch : MonoBehaviour
         if (countdown < 4 && countdown > 2){
             counter.GetComponent<Text>().text = "3";
         }
-        if (countdown < 3 && countdown > 1){
-            counter.GetComponent<Text>().text = "2";
-        }
-        if (countdown < 2 && countdown > 0){
-            counter.GetComponent<Text>().text = "1";
-        }
-        if (countdown < 1 && countdown > -1){
-            counter.GetComponent<Text>().text = "GO!";
-            SceneManager.LoadScene(4);
-
-
+        if(nextScene!=0){
+            SceneManager.LoadScene(nextScene);
         }
     }
 
 
+}
 }

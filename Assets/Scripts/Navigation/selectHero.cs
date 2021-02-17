@@ -26,30 +26,26 @@ public class selectHero : MonoBehaviour
     string hero;
     string inGameName;
     string roomNumber;
-    int sceneNr=0;
-    
-    int selected;
+    int sceneNr = 0;
+    public int selected = 100;
     public ArrayList taken = new ArrayList();
     responseMessage res;
     requestMessage req;
     string roomNr;
     string userName;
     string dinoBlocked;
+    string selectedCharacter = "init";
     // Start is called before the first frame update
     void Start()
     {
-        
-        Debug.Log("1");
         name1 = GameObject.Find("Name1");
         name2 = GameObject.Find("Name2");
         name3 = GameObject.Find("Name3");
         name4 = GameObject.Find("Name4");
-         Debug.Log("2");
         dino1 = GameObject.Find("Dino1");
         dino2 = GameObject.Find("Dino2");
         dino3 = GameObject.Find("Dino3");
         dino4 = GameObject.Find("Dino4");
-         Debug.Log("3");
         guest = GameObject.Find("Guest");
         guest.gameObject.GetComponent<Image>().enabled = false;
         host = GameObject.Find("Start");
@@ -72,24 +68,21 @@ public class selectHero : MonoBehaviour
                 switch (res.action)
                 {
                     case "selectCharacter":
-                     Debug.Log("select character");
                         dinoBlocked = res.response;
                         userName = res.userid;
                         taken.Add(dinoBlocked);
-                        Debug.Log("Dinoblocked"+dinoBlocked);
-                        Debug.Log("Username"+userName);
+                        selectedCharacter = res.response;
                         break;
                     case "generateScenes":
-                        Debug.Log("NEW MESSAGE BITCHES");
-                        Debug.Log(res.response);
                         if(res.response!="ERROR"){
-                            //startGame(res.response);
                              sceneNr = int.Parse(res.response);
                         }else{
                             Debug.Log("wait till everyone chooses character");
                         }
                         break;
-                    
+                    case "selectOwnCharacter":
+                        selectedCharacter = res.response;
+                        break;
                 }
                 
             };
@@ -105,81 +98,64 @@ public class selectHero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(sceneNr!=0){
-        SceneManager.LoadScene(sceneNr);
+        switch(selectedCharacter){
+            case "0":
+                name1.GetComponent<Text>().text = WS.userName;
+                break;
+            case "1":
+                name2.GetComponent<Text>().text = WS.userName;
+                break;
+            case "2":
+                name3.GetComponent<Text>().text = WS.userName;
+                break;
+            case "3":
+                name4.GetComponent<Text>().text = WS.userName;
+                break;
         }
-       // setSelection();
-        //getSelection();
-        playername1 = "Janos";
-        playername2 = "Bela";
-        playername3 = "Kalman";
-        playername4 = "Istvan";
-        name1.GetComponent<Text>().text = ""+playername1;
-        name2.GetComponent<Text>().text = ""+playername2;
-        name3.GetComponent<Text>().text = ""+playername3;
-        name4.GetComponent<Text>().text = ""+playername4;
-        
+        if(sceneNr!=0){
+            SceneManager.LoadScene(sceneNr);
+        }
     }
     //gets the selected heros of opponents
-    public void getSelection(){
-            
+    public void getSelection(){       
             for (int i = 0; i<=3;i++){
-                
-                if(taken[i]=="1"){
-                    dino1.GetComponent<Button>().enabled = false;
+                switch(taken[i]){
+                    case "1":
+                        dino1.GetComponent<Button>().enabled = false;
+                        break;
+                    case "2":
+                        dino2.GetComponent<Button>().enabled = false;
+                        break;
+                    case "3":
+                        dino3.GetComponent<Button>().enabled = false;
+                        break;
+                    case "4":
+                        dino4.GetComponent<Button>().enabled = false;
+                        break;
                 }
-                else if(taken[i]!="1"){
-                    dino1.GetComponent<Button>().enabled = true;
-                }
-                if(taken[i]=="2"){
-                    dino2.GetComponent<Button>().enabled = false;
-                }
-                else if(taken[i]!="2"){
-                    dino2.GetComponent<Button>().enabled = true;
-                }
-                if(taken[i]=="3"){
-                    dino3.GetComponent<Button>().enabled = false;
-                }
-                else if(taken[i]!="3"){
-                    dino3.GetComponent<Button>().enabled = true;
-                }
-                if(taken[i]=="4"){
-                    dino4.GetComponent<Button>().enabled = false;
-                }
-                else if(taken[i]!="4"){
-                    dino4.GetComponent<Button>().enabled = true;
-                }
-                
-                return;
-
             }
-        
-
     }
 
     public void setSelection(){
         hero = buttonSelect.hero;
-        
         switch(hero){
             case "Dino1":
-            selected = 0;
-            break;
+                selected = 0;
+                break;
             case "Dino2":
-            selected = 1;
-            break;
+                selected = 1;
+                break;
             case "Dino3":
-            selected = 2;
-            break;
+                selected = 2;
+                break;
             case "Dino4":
-            selected = 3;
-            break;
-
+                selected = 3;
+                break;
         }
         Debug.Log("Hero: "+hero);
         Debug.Log("Selected: "+selected);
         requestMessage msg = new requestMessage(WS.userid_global,""+selected,"selectCharacter");
         WS.ws.Send(JsonUtility.ToJson(msg));
-        //itt kell elkuldeni a szeronak h melyik dinot valasztottuk
     }
 
     public void BackButton(){
