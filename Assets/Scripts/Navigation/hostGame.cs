@@ -74,9 +74,8 @@ namespace ConnectionNamespace
             //playersCount = 4;
             popup p = new popup();
             inGameName = inputName.GetComponent<Text>().text;
+            WS.userName = inGameName;
             Debug.Log(inGameName);
-
-            
             
             if (inGameName != "")
             {
@@ -92,12 +91,7 @@ namespace ConnectionNamespace
 
                 Debug.Log("Enter your name!!!!!");
                 p.popupWindow("Please fill in your name!");
-
             }
-
         }
-
-
-
     }
 }

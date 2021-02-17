@@ -60,6 +60,7 @@ namespace ConnectionNamespace
             popup p = new popup();
             roomNumber = roomNr.GetComponent<Text>().text;
             inGameName = name.GetComponent<Text>().text;
+            WS.userName = inGameName;
             Debug.Log("Roomnr: "+roomNumber);
             Debug.Log("name"+inGameName);
 

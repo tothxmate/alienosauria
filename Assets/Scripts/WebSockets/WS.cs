@@ -10,6 +10,8 @@ namespace ConnectionNamespace
         public static string userid_global;
         public static int gameNr = 0;
         public static string role;
+        public static string userName;
+        public static int foodGamePoints = 0;
         // Start is called before the first frame update
     }
 }
