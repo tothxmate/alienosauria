@@ -9,8 +9,8 @@ namespace ConnectionNamespace{
 public class roundSwitch : MonoBehaviour
 {
 
-    public float countdown = 5;
-    public int myscore;
+    public float countdown = 6;
+    public string myscore = null;
     public string converter;
     public GameObject counter;
     public GameObject score;
@@ -34,9 +34,7 @@ public class roundSwitch : MonoBehaviour
             switch (res.action)
             {
                 case "getScore":
-                    myscore = int.Parse(res.response);
-                    converter = ""+myscore;
-                    score.GetComponent<Text>().text = converter;
+                    myscore = res.response;
                 break;
                 case "getNextGame":
                     nextScene = int.Parse(res.response);
@@ -48,12 +46,16 @@ public class roundSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(myscore!=null){
+            score.GetComponent<Text>().text = myscore;
+        }
         if (countdown > 0) {
             countdown -= Time.deltaTime;
         }
         counter.GetComponent<Text>().text = ((int)countdown).ToString();
-        if(countdown==0&&nextScene!=null&&updateCount == 0){
+        if(countdown<=0&&updateCount==0){
             updateCount++;
+            Debug.Log("benne vok tesom");
             req = new requestMessage(WS.userid_global, "", "getNextGame");
             WS.ws.Send(JsonUtility.ToJson(req));
         }
@@ -61,7 +63,5 @@ public class roundSwitch : MonoBehaviour
             SceneManager.LoadScene(nextScene);
         }
     }
-
-
 }
 }
