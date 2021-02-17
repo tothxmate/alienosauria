@@ -22,10 +22,7 @@ public class changeQuestion : MonoBehaviour
     }
 
     public void changeTheQuestion() {
-
-
-        userId = joinGame.userId;
-        Debug.Log("user ID is still: " + userId);
+        Debug.Log("user ID is still: " + WS.userid_global);
         //random questiont be kell huzni es azt berakni a question.text= után
         Text question = GameObject.Find("Canvas/Panel/Question").GetComponent<Text>();
         question.text = "What are the odds of winning this game?";

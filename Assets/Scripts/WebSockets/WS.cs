@@ -4,20 +4,12 @@ using UnityEngine;
 
 namespace ConnectionNamespace
 {
-    public class WS : MonoBehaviour
+    public static class WS
     {
         public static WebSocket ws;
+        public static string userid_global;
+        public static int gameNr = 0;
+        public static string role;
         // Start is called before the first frame update
-        void Start()
-        {
-            ws = new WebSocket("ws://kutyadoki.hu/socket/");
-            ws.Connect();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
