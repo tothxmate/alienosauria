@@ -46,7 +46,9 @@ public class cardGameChangeCards : MonoBehaviour
             round = 1;
             WS.roundNr++;
         }
-        
+
+        Debug.Log("ROUND NUMBERRRRR");
+        Debug.Log(WS.roundNr);
         
         round = 1;      
         InvokeRepeating("ChangeCards", 1, 2);
@@ -56,9 +58,6 @@ public class cardGameChangeCards : MonoBehaviour
         wongame.gameObject.GetComponent<Image>().enabled = false;
         lostgame.gameObject.GetComponent<Image>().enabled = false;
         nextgame.gameObject.GetComponent<Image>().enabled = false;
-        
-
-
     }
 
 

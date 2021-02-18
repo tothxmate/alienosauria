@@ -59,7 +59,7 @@ public class changeQuestion : MonoBehaviour
         button3.GetComponent<Button>().enabled = false;
         button4.GetComponent<Button>().enabled = false;
 
-       req = new requestMessage(WS.userid_global, "", "generateQuestion");
+        req = new requestMessage(WS.userid_global, "", "generateQuestion");
         WS.ws.Send(JsonUtility.ToJson(req));
         WS.ws.OnMessage += (sender, e) =>
                 {
@@ -77,13 +77,6 @@ public class changeQuestion : MonoBehaviour
                             break;
                     }
                 };
-              /*  a = "jancsi";
-                b = "marcsi";
-                c = "pisti";
-                d = "bendzsi";
-                question = "Ki a legszebb?";
-                answer = "jancsi";*/
-
     }
 
     // Update is called once per frame
@@ -94,10 +87,16 @@ public class changeQuestion : MonoBehaviour
 
         if(countdown > 1 && rounds <= 6){
             colorCounter -= Time.deltaTime;
-       counter.GetComponent<Text>().text = ((int)countdown).ToString();
-       if(colorCounter > 1){
-           // Debug.Log("Colored as hell!");
-        
+            counter.GetComponent<Text>().text = ((int)countdown).ToString();
+            if(colorCounter > 1){
+                Debug.Log("Colored as hell!");
+            }else{
+                button1.GetComponent<Image>().color = new Color32(255,255,255,255);
+                button2.GetComponent<Image>().color = new Color32(255,255,255,255);
+                button3.GetComponent<Image>().color = new Color32(255,255,255,255);
+                button4.GetComponent<Image>().color = new Color32(255,255,255,255);
+                colorCounter = 2;
+            }
         }
      if (countdown < 1 && rounds <= 6) {
         Debug.Log("Colrocounter"+colorCounter);
@@ -128,7 +127,6 @@ public class changeQuestion : MonoBehaviour
                 SceneManager.LoadScene(9);
             }
         }
-    }
     }
 
     public void checkTheAnswer(){     
