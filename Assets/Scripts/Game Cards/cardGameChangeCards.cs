@@ -82,7 +82,9 @@ public class cardGameChangeCards : MonoBehaviour
 
             countdown -= Time.deltaTime;
             ingame = true;
-        }else if (ingame == true)
+
+        }
+        else if (ingame == true)
         {
             ingame = false;
             btnPressed = true;
@@ -91,6 +93,10 @@ public class cardGameChangeCards : MonoBehaviour
             // cardStates.Clear();
 
             InvokeRepeating("ChangeCards", 0, 2);
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 703238b5af1d5b3b80c9f5f29e80d7180b915763
             Debug.Log("ROUNDDDD");
             Debug.Log(round);
             countdown = 1;
@@ -108,7 +114,11 @@ public class cardGameChangeCards : MonoBehaviour
             req = new requestMessage(WS.userid_global, ""+WS.cardGamePoints, "addScore");
             WS.ws.Send(JsonUtility.ToJson(req));
             
+<<<<<<< HEAD
             if(WS.roundNr > 3){
+=======
+            if(WS.roundNr < 3){
+>>>>>>> 703238b5af1d5b3b80c9f5f29e80d7180b915763
                 SceneManager.LoadScene(7);
             }else {
                 SceneManager.LoadScene(9);
@@ -178,6 +188,7 @@ public class cardGameChangeCards : MonoBehaviour
 
 
     void ChangeCards()
+<<<<<<< HEAD
     {
         round++;
         randomNumber = UnityEngine.Random.Range(1, 10);
@@ -187,6 +198,12 @@ public class cardGameChangeCards : MonoBehaviour
             lastgame = true;
             CancelInvoke("ChangeCards");
         }
+=======
+    {   round++;
+        randomNumber = UnityEngine.Random.Range(1, 10);
+        StartCoroutine(Test());
+        
+>>>>>>> 703238b5af1d5b3b80c9f5f29e80d7180b915763
     }
 
 
