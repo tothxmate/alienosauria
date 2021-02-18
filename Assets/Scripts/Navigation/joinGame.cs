@@ -18,6 +18,7 @@ namespace ConnectionNamespace
         public int sceneNr;
         string msg;
         responseMessage res;
+        initGuestMessage init_guest;
         // Start is called before the first frame update
         void Start()
         {
@@ -67,9 +68,8 @@ namespace ConnectionNamespace
             if (roomNumber != "" && inGameName != "")
             {
                
-            string msg = "{\"action\":\"initGuest\", \"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
-            WS.ws.Send(msg);
-            Debug.Log("Lefut");
+            init_guest = new initGuestMessage("initGuest",inGameName,roomNumber);
+            WS.ws.Send(JsonUtility.ToJson(init_guest));
 
             }
             else if (roomNumber != "" && inGameName == "")
