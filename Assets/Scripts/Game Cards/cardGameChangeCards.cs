@@ -85,8 +85,7 @@ public class cardGameChangeCards : MonoBehaviour
 
             countdown -= Time.deltaTime;
             ingame = true;
-        }
-        else if (ingame == true)
+        }else if (ingame == true)
         {
             ingame = false;
             btnPressed = true;
@@ -96,6 +95,8 @@ public class cardGameChangeCards : MonoBehaviour
 
             InvokeRepeating("ChangeCards", 0, 2);
             round++;
+            Debug.Log("ROUNDDDD");
+            Debug.Log(round);
             countdown = 1;
             if (round == 20)
             {
