@@ -75,7 +75,7 @@ public class selectHero : MonoBehaviour
                         break;
                     case "generateScenes":
                         if(res.response!="ERROR"){
-                             sceneNr = int.Parse(res.response);
+                            sceneNr = int.Parse(res.response);
                         }else{
                             Debug.Log("wait till everyone chooses character");
                         }

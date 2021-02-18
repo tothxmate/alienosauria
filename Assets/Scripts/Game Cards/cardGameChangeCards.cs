@@ -110,7 +110,7 @@ public class cardGameChangeCards : MonoBehaviour
             req = new requestMessage(WS.userid_global, ""+WS.cardGamePoints, "addScore");
             WS.ws.Send(JsonUtility.ToJson(req));
             
-            if(WS.roundNr > 3){
+            if(WS.roundNr < 3){
                 SceneManager.LoadScene(7);
             }else {
                 SceneManager.LoadScene(9);
@@ -184,7 +184,7 @@ public class cardGameChangeCards : MonoBehaviour
         round++;
         randomNumber = UnityEngine.Random.Range(1, 10);
         StartCoroutine(Test());
-        if (round == 3)
+        if (round == 20)
         {
             lastgame = true;
             CancelInvoke("ChangeCards");
