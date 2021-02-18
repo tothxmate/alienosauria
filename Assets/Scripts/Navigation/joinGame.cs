@@ -16,7 +16,7 @@ namespace ConnectionNamespace
         public static string roomNumber;
         public static string inGameName;
         public int sceneNr;
-        string msg;
+        public static string msg;
         responseMessage res;
         // Start is called before the first frame update
         void Start()
@@ -66,10 +66,10 @@ namespace ConnectionNamespace
 
             if (roomNumber != "" && inGameName != "")
             {
-               
-            string msg = "{\"action\":\"initGuest\", \"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
-            WS.ws.Send(msg);
             Debug.Log("Lefut");
+            msg = "{\"action\":\"initGuest\", \"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
+            WS.ws.Send(msg);
+            
 
             }
             else if (roomNumber != "" && inGameName == "")
