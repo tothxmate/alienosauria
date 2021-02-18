@@ -11,5 +11,11 @@ namespace ConnectionNamespace
         string action;
         string username;
         string roomNumber;
+        public initGuestMessage(string a, string u, string rn)
+        {
+            action = a;
+            username = u;
+            roomNumber = rn;
+        }
     }
 }
