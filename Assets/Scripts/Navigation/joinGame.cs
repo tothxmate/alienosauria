@@ -45,6 +45,7 @@ namespace ConnectionNamespace
                         }
                         else
                         {
+                            WS.userid_global = res.userid;
                             Debug.Log("fucker");
                             popup p = new popup();
                             p.popupWindow("Please wait until the host starts the game!");
