@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+namespace ConnectionNamespace{
 
 public class spawnFood : MonoBehaviour
 {
@@ -17,10 +18,13 @@ public class spawnFood : MonoBehaviour
     int whatToSpawn;
 
     float checkTime = 21;
+
+    requestMessage req;
     // Start is called before the first frame update
     void Start()
     {
-        
+        WS.roundNr++;
+        Debug.Log("WSROUND: "+WS.roundNr);
     }
 
     // Update is called once per frame
@@ -68,7 +72,15 @@ public class spawnFood : MonoBehaviour
 
         else if (checkTime <= 0) {
             //count points
-            SceneManager.LoadScene(7);
+            req = new requestMessage(WS.userid_global, ""+WS.foodGamePoints, "addScore");
+            WS.ws.Send(JsonUtility.ToJson(req));
+             if(WS.roundNr < 4){
+                SceneManager.LoadScene(7);
+                
+            }
+            else {
+                SceneManager.LoadScene(9);
+            }
         }
     }
 
@@ -78,3 +90,4 @@ public class spawnFood : MonoBehaviour
     }*/ 
 }
 
+}

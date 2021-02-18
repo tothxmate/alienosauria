@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace ConnectionNamespace{
+
 public class eatFood : MonoBehaviour
 {
     private int randNr;
@@ -39,6 +41,7 @@ public class eatFood : MonoBehaviour
         if (randNr == 1)
         {
             Debug.Log("I should have been destroyed");
+            WS.foodGamePoints++;
             Destroy(gameObject);
         }
         else
@@ -51,12 +54,4 @@ public class eatFood : MonoBehaviour
     }
 }
     
-
-   
-
-
-    
-    
-
-
-
+}

@@ -9,8 +9,10 @@ namespace ConnectionNamespace{
 public class checkAnswer : MonoBehaviour
 {
     public changeQuestion changeQuestion;
+    public GameObject text;
     public static int checkValue = 0;
-    int userId;
+    public static string selectedAnswer;
+    public static string selectedText;
     //public joinGame joinGame;
     //public int userId;
     //changeQuestion script = gameObject.GetComponent<changeQuestion>();
@@ -28,21 +30,18 @@ public class checkAnswer : MonoBehaviour
     }
 
     public void checkAnswers() {
-       
-
         if (checkValue < 5) {
             //a checkValue az csak egy szam 1-5ig es a roundokat jelenti, es ezt a szerotol kene megkapni
             checkValue++;
-            Debug.Log("You clicked on the butt" + EventSystem.current.currentSelectedGameObject.name);
-            Debug.Log("checkvalue = " + checkValue);
-            userId = joinGame.userId;
-            Debug.Log("The userID is: " + userId);
-            changeQuestion.changeTheQuestion();
+            selectedAnswer=EventSystem.current.currentSelectedGameObject.name;
+            text = GameObject.Find("Canvas/Panel/"+selectedAnswer+"/Text");
+            selectedText = text.GetComponent<Text>().text;
+            Debug.Log("text: "+selectedText);
+            changeQuestion ch = new changeQuestion();
+            ch.checkTheAnswer();
             
+            //changeQuestion.changeTheQuestion();
         }
-        //le kene csekkolni h ki milyen answert küldött, es ha a jot kuldte az kap 1 pontot, ha nem, az nem kap
-        
-    
     }
 }
 }
