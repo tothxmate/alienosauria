@@ -40,6 +40,7 @@ public class changeQuestion : MonoBehaviour
     {  
         counter = GameObject.Find("Countdown");
         WS.roundNr++;
+        Debug.Log("WSROUND: "+WS.roundNr);
         answer1 = GameObject.Find("Canvas/Panel/Answer1/Text").GetComponent<Text>();
         answer2 = GameObject.Find("Canvas/Panel/Answer2/Text").GetComponent<Text>();
         answer3 = GameObject.Find("Canvas/Panel/Answer3/Text").GetComponent<Text>();
@@ -58,7 +59,7 @@ public class changeQuestion : MonoBehaviour
         button3.GetComponent<Button>().enabled = false;
         button4.GetComponent<Button>().enabled = false;
 
-      /*  req = new requestMessage(WS.userid_global, "", "generateQuestion");
+       req = new requestMessage(WS.userid_global, "", "generateQuestion");
         WS.ws.Send(JsonUtility.ToJson(req));
         WS.ws.OnMessage += (sender, e) =>
                 {
@@ -68,19 +69,20 @@ public class changeQuestion : MonoBehaviour
                         case "generateQuestion":
                             question = res.question;
                             answer = res.answer;
+                            Debug.Log("answerrrr: "+answer);
                             a = res.a;
                             b = res.b;
                             c = res.c;
                             d = res.d;
                             break;
                     }
-                };*/
-                a = "jancsi";
+                };
+              /*  a = "jancsi";
                 b = "marcsi";
                 c = "pisti";
                 d = "bendzsi";
                 question = "Ki a legszebb?";
-                answer = "jancsi";
+                answer = "jancsi";*/
 
     }
 
@@ -94,7 +96,7 @@ public class changeQuestion : MonoBehaviour
             colorCounter -= Time.deltaTime;
        counter.GetComponent<Text>().text = ((int)countdown).ToString();
        if(colorCounter > 1){
-            Debug.Log("Colored as hell!");
+           // Debug.Log("Colored as hell!");
         
         }
         else if(colorCounter < 1) {

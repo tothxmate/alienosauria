@@ -23,6 +23,7 @@ public class results : MonoBehaviour
             GameObject child2 = newEntry.transform.GetChild(1).gameObject;
             child1.GetComponent<Text>().text="jancsi";
             child2.GetComponent<Text>().text="500";
+            child1.GetComponent<Text>().text="eger";
             Debug.Log(child1);
         }
         
