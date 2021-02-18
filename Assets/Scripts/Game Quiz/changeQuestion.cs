@@ -118,7 +118,7 @@ public class changeQuestion : MonoBehaviour
     }
         
         if (rounds == 6){
-             if(WS.roundNr < 4){
+             if(WS.roundNr < 3){
                 req = new requestMessage(WS.userid_global, ""+WS.quizGamePoints, "addScore");
                 WS.ws.Send(JsonUtility.ToJson(req));
                 SceneManager.LoadScene(7);

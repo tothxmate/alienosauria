@@ -98,17 +98,30 @@ public class selectHero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         switch(selectedCharacter){
             case "0":
                 name1.GetComponent<Text>().text = WS.userName;
+                name2.GetComponent<Text>().text = "name";
+                name3.GetComponent<Text>().text = "name";
+                name4.GetComponent<Text>().text = "name";
                 break;
             case "1":
+                name1.GetComponent<Text>().text = "name";
                 name2.GetComponent<Text>().text = WS.userName;
+                name3.GetComponent<Text>().text = "name";
+                name4.GetComponent<Text>().text = "name";
                 break;
             case "2":
+                name1.GetComponent<Text>().text = "name";
+                name2.GetComponent<Text>().text = "name";
                 name3.GetComponent<Text>().text = WS.userName;
+                name4.GetComponent<Text>().text = "name";
                 break;
             case "3":
+                name1.GetComponent<Text>().text = "name";
+                name2.GetComponent<Text>().text = "name";
+                name3.GetComponent<Text>().text = "name";
                 name4.GetComponent<Text>().text = WS.userName;
                 break;
         }
