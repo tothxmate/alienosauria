@@ -21,11 +21,11 @@ public class changeQuestion : MonoBehaviour
     public GameObject counter;
     public GameObject changeColor;
     public string selectedAnswer;
-    string a;
-    string b;
-    string c;
-    string d;
-    string question;
+    public string a;
+    public string b;
+    public string c;
+    public string d;
+    public string question;
     public static string answer;
     public static int rounds;
     public static int sceneNr;
@@ -90,7 +90,7 @@ public class changeQuestion : MonoBehaviour
          countdown -= Time.deltaTime;
          
 
-        if(countdown > 1 && rounds <= 5){
+        if(countdown > 1 && rounds <= 6){
             colorCounter -= Time.deltaTime;
        counter.GetComponent<Text>().text = ((int)countdown).ToString();
        if(colorCounter > 1){
@@ -106,7 +106,7 @@ public class changeQuestion : MonoBehaviour
         }
         
     }
-     if (countdown < 1 && rounds <= 5) {
+     if (countdown < 1 && rounds <= 6) {
         
         Debug.Log("Colrocounter"+colorCounter);
         button1.GetComponent<Button>().enabled = true;
@@ -127,7 +127,7 @@ public class changeQuestion : MonoBehaviour
         
     }
         
-        if (rounds == 5){
+        if (rounds == 6){
              if(WS.roundNr < 3){
                 SceneManager.LoadScene(7);
                 
@@ -144,7 +144,7 @@ public class changeQuestion : MonoBehaviour
         changeColor = GameObject.Find("Canvas/Panel/"+selectedAnswer);
         Debug.Log("selectedText: "+selectedText);
         Debug.Log("answer: "+answer);
-            if(selectedText==answer && rounds <= 5){    
+            if(selectedText==answer && rounds <= 6){    
                 WS.quizGamePoints++;
                 changeColor.gameObject.GetComponent<Image>().color = new Color32(13,236,65,255);
                 countdown = 0;
