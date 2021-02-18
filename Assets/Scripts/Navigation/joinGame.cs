@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using WebSocketSharp;
 
+using WebSocketSharp;
+
 namespace ConnectionNamespace
 {
     public class joinGame : MonoBehaviour
@@ -18,11 +20,12 @@ namespace ConnectionNamespace
         public static string inGameName;
         public int sceneNr;
         public static string msg;
+        public bool nextScene= false;
         responseMessage res;
         // Start is called before the first frame update
         void Start()
         {
-            popup p = new popup();
+            
             WS.role = "guest";
             WS.ws = new WebSocket("ws://kutyadoki.hu/socket/");
             WS.ws.Connect();
@@ -32,16 +35,25 @@ namespace ConnectionNamespace
                 switch (res.action)
                 {
                     case "initGuest":
+                    Debug.Log("intiguest");
                         if (res.userid == "none")
                         {
+                            Debug.Log("bitch");
+                            popup p = new popup();
                             p.popupWindow("This room doesn't exist!");
                             Debug.Log("THIS ROOM DOESNT EXIST");
                         }
                         else
                         {
+                            Debug.Log("fucker");
+                            popup p = new popup();
                             p.popupWindow("Please wait until the host starts the game!");
                             Debug.Log("yesyes");
                         }
+                        break;
+                    case "toCharacterChoose":
+                        nextScene = true;
+                        
                         break;
                 }
             };
@@ -50,7 +62,9 @@ namespace ConnectionNamespace
         // Update is called once per frame
         void Update()
         {
-
+            if(nextScene == true){
+                SceneManager.LoadScene(3);
+            }
         }
 
         public void BackButton()
