@@ -22,6 +22,8 @@ namespace ConnectionNamespace
         void Start()
         {
             WS.role = "guest";
+            WS.ws = new WebSocket("ws://kutyadoki.hu/socket/");
+            WS.ws.Connect();
             WS.ws.OnMessage += (sender, e) =>
             {
                 res = JsonUtility.FromJson<responseMessage>(e.Data);
