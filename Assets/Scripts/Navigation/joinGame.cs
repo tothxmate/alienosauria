@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using WebSocketSharp;
 
-using WebSocketSharp;
+
 
 namespace ConnectionNamespace
 {
@@ -26,9 +26,12 @@ namespace ConnectionNamespace
         void Start()
         {
             
+            
             WS.role = "guest";
             WS.ws = new WebSocket("ws://kutyadoki.hu/socket/");
             WS.ws.Connect();
+            basicMessage msg = new basicMessage("setGuestUserId");
+            WS.ws.Send(JsonbasicUtility.ToJson(msg));
             WS.ws.OnMessage += (sender, e) =>
             {
                 res = JsonUtility.FromJson<responseMessage>(e.Data);
@@ -45,7 +48,11 @@ namespace ConnectionNamespace
                         }
                         else
                         {
+<<<<<<< HEAD
                             WS.userid_global = res.userid;
+=======
+                            
+>>>>>>> 0957ffd007c4a9df0471734b9838aca02d89f70f
                             Debug.Log("fucker");
                             popup p = new popup();
                             p.popupWindow("Please wait until the host starts the game!");
@@ -56,6 +63,9 @@ namespace ConnectionNamespace
                         nextScene = true;
                         
                         break;
+                    case "setGuestUserId"  :
+                    WS.userid_global = res.userid;  
+                    break;
                 }
             };
         }
