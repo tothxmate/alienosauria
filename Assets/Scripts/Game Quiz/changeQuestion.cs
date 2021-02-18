@@ -14,10 +14,10 @@ public class changeQuestion : MonoBehaviour
     Text answer3;
     Text answer4;
     Text questionText;
-    GameObject button1;
-    GameObject button2;
-    GameObject button3;
-    GameObject button4;
+    public static GameObject button1;
+    public static GameObject button2;
+    public static GameObject button3;
+    public static GameObject button4;
     public GameObject counter;
     public GameObject changeColor;
     public string selectedAnswer;
@@ -89,7 +89,7 @@ public class changeQuestion : MonoBehaviour
             colorCounter -= Time.deltaTime;
             counter.GetComponent<Text>().text = ((int)countdown).ToString();
             if(colorCounter > 1){
-                Debug.Log("Colored as hell!");
+                
             }else{
                 button1.GetComponent<Image>().color = new Color32(255,255,255,255);
                 button2.GetComponent<Image>().color = new Color32(255,255,255,255);
@@ -138,12 +138,21 @@ public class changeQuestion : MonoBehaviour
             if(selectedText==answer && rounds <= 6){    
                 WS.quizGamePoints++;
                 changeColor.gameObject.GetComponent<Image>().color = new Color32(13,236,65,255);
+                button1.GetComponent<Button>().enabled = false;
+                button2.GetComponent<Button>().enabled = false;
+                button3.GetComponent<Button>().enabled = false;
+                button4.GetComponent<Button>().enabled = false;
                 Debug.Log("Right answer!"+WS.quizGamePoints);
                 Debug.Log("Rounds: "+rounds);
+
                 //ide kell még requestelni uj kérdéseket és válaszokat
             }
             else {
                 changeColor.gameObject.GetComponent<Image>().color = new Color32(243,0,0,255);
+                button1.GetComponent<Button>().enabled = false;
+                button2.GetComponent<Button>().enabled = false;
+                button3.GetComponent<Button>().enabled = false;
+                button4.GetComponent<Button>().enabled = false;
                 Debug.Log("Rounds: "+rounds);
                 Debug.Log("Youre quite stupid! :(");
             }

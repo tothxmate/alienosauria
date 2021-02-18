@@ -130,7 +130,6 @@ public class cardGameChangeCards : MonoBehaviour
     public void ShowResults()
     {
 
-
         btnPressed = false;
         CancelInvoke("ChangeCards");
         cardone = GameObject.Find("Card1");
@@ -152,6 +151,7 @@ public class cardGameChangeCards : MonoBehaviour
                 {
                     counter++;
                     
+                    counter++;
                     //lostgame = GameObject.Find("GameLost");
                     //lostgame.active = true;
                     //Debug.Log("Lefutott");
