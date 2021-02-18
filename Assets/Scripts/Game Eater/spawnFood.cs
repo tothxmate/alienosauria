@@ -24,6 +24,7 @@ public class spawnFood : MonoBehaviour
     void Start()
     {
         WS.roundNr++;
+        Debug.Log("WSROUND: "+WS.roundNr);
     }
 
     // Update is called once per frame

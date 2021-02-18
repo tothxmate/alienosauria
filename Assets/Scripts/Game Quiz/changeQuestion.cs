@@ -40,6 +40,7 @@ public class changeQuestion : MonoBehaviour
     {  
         counter = GameObject.Find("Countdown");
         WS.roundNr++;
+        Debug.Log("WSROUND: "+WS.roundNr);
         answer1 = GameObject.Find("Canvas/Panel/Answer1/Text").GetComponent<Text>();
         answer2 = GameObject.Find("Canvas/Panel/Answer2/Text").GetComponent<Text>();
         answer3 = GameObject.Find("Canvas/Panel/Answer3/Text").GetComponent<Text>();
@@ -58,7 +59,7 @@ public class changeQuestion : MonoBehaviour
         button3.GetComponent<Button>().enabled = false;
         button4.GetComponent<Button>().enabled = false;
 
-        req = new requestMessage(WS.userid_global, "", "generateQuestion");
+       req = new requestMessage(WS.userid_global, "", "generateQuestion");
         WS.ws.Send(JsonUtility.ToJson(req));
         WS.ws.OnMessage += (sender, e) =>
                 {
@@ -68,6 +69,7 @@ public class changeQuestion : MonoBehaviour
                         case "generateQuestion":
                             question = res.question;
                             answer = res.answer;
+                            Debug.Log("answerrrr: "+answer);
                             a = res.a;
                             b = res.b;
                             c = res.c;
@@ -75,6 +77,13 @@ public class changeQuestion : MonoBehaviour
                             break;
                     }
                 };
+              /*  a = "jancsi";
+                b = "marcsi";
+                c = "pisti";
+                d = "bendzsi";
+                question = "Ki a legszebb?";
+                answer = "jancsi";*/
+
     }
 
     // Update is called once per frame
@@ -85,16 +94,9 @@ public class changeQuestion : MonoBehaviour
 
         if(countdown > 1 && rounds <= 6){
             colorCounter -= Time.deltaTime;
-            counter.GetComponent<Text>().text = ((int)countdown).ToString();
-            if(colorCounter > 1){
-                Debug.Log("Colored as hell!");
-            }else{
-                button1.GetComponent<Image>().color = new Color32(255,255,255,255);
-                button2.GetComponent<Image>().color = new Color32(255,255,255,255);
-                button3.GetComponent<Image>().color = new Color32(255,255,255,255);
-                button4.GetComponent<Image>().color = new Color32(255,255,255,255);
-                colorCounter = 2;
-            }
+       counter.GetComponent<Text>().text = ((int)countdown).ToString();
+       if(colorCounter > 1){
+           // Debug.Log("Colored as hell!");
         
         }
      if (countdown < 1 && rounds <= 6) {
@@ -126,6 +128,7 @@ public class changeQuestion : MonoBehaviour
                 SceneManager.LoadScene(9);
             }
         }
+    }
     }
 
     public void checkTheAnswer(){     

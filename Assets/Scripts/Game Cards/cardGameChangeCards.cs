@@ -48,15 +48,15 @@ public class cardGameChangeCards : MonoBehaviour
         }
         
         
+        round = 1;      
         InvokeRepeating("ChangeCards", 1, 2);
-        
-
         wongame = GameObject.Find("GameWon");
         lostgame = GameObject.Find("GameLost");
         nextgame = GameObject.Find("NextGame");
         wongame.gameObject.GetComponent<Image>().enabled = false;
         lostgame.gameObject.GetComponent<Image>().enabled = false;
         nextgame.gameObject.GetComponent<Image>().enabled = false;
+        
 
 
     }
