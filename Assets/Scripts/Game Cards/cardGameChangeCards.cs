@@ -42,9 +42,10 @@ public class cardGameChangeCards : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        WS.roundNr++;
-
-        round = 1;
+        if(round==0){
+            round = 1;
+            WS.roundNr++;
+        }
         
         
         InvokeRepeating("ChangeCards", 1, 2);
@@ -72,29 +73,18 @@ public class cardGameChangeCards : MonoBehaviour
         if (status == 1 && btnPressed == false)
         {
             status = 0;
-            Debug.Log("you lost" + status);
             lostgame.gameObject.GetComponent<Image>().enabled = true;
-            round++;
-            Debug.Log("ROund: " + round);
-
-
-
         }
         else if (status == 2 && btnPressed == false)
         {   
             status = 0;
             wongame.gameObject.GetComponent<Image>().enabled = true;
-            round++;
-            Debug.Log("ROund: " + round);
-
-
         }
 
         if (round < 21 && countdown >= 0 && btnPressed == false)
         {
 
             countdown -= Time.deltaTime;
-            //Debug.Log("countdown" + countdown);
             ingame = true;
         }
         else if (ingame == true)
@@ -106,8 +96,8 @@ public class cardGameChangeCards : MonoBehaviour
             // cardStates.Clear();
 
             InvokeRepeating("ChangeCards", 0, 2);
+            round++;
             countdown = 1;
-            Debug.Log("CUNTDOWN" + countdown);
             if (round == 20)
             {
                 lastgame = true;
@@ -124,16 +114,13 @@ public class cardGameChangeCards : MonoBehaviour
             wongame.gameObject.GetComponent<Image>().enabled = false;
             lostgame.gameObject.GetComponent<Image>().enabled = false;
             // nextgame.gameObject.GetComponent<Image>().enabled = true;
-            Debug.Log("countdown= " + countdown);
             countdown -= Time.deltaTime;
             req = new requestMessage(WS.userid_global, ""+WS.cardGamePoints, "addScore");
             WS.ws.Send(JsonUtility.ToJson(req));
             
             if(WS.roundNr < 4){
                 SceneManager.LoadScene(7);
-                
-            }
-            else {
+            }else {
                 SceneManager.LoadScene(9);
             }
         }
@@ -145,7 +132,6 @@ public class cardGameChangeCards : MonoBehaviour
 
 
         btnPressed = false;
-        Debug.Log("I canceled the invoke");
         CancelInvoke("ChangeCards");
         cardone = GameObject.Find("Card1");
         cardtwo = GameObject.Find("Card2");
@@ -157,10 +143,6 @@ public class cardGameChangeCards : MonoBehaviour
         cardStates.Add(cardtwo.GetComponent<Image>().sprite);
         cardStates.Add(cardthree.GetComponent<Image>().sprite);
         cardStates.Add(cardfour.GetComponent<Image>().sprite);
-        foreach (var item in cardStates)
-        {
-            Debug.Log("The nodes of MDG are:" + item);
-        }
 
         for (int i = 0; i <= 3; i++)
         {
@@ -208,7 +190,6 @@ public class cardGameChangeCards : MonoBehaviour
     void ChangeCards()
     {
         randomNumber = UnityEngine.Random.Range(1, 10);
-        Debug.Log("The generated random number is: " + randomNumber);
         StartCoroutine(Test());
     }
 

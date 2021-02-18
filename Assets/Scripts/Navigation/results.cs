@@ -44,7 +44,6 @@ public class results : MonoBehaviour
                     break;
             }
         };
-        waiter();
     }
 
     // Update is called once per frame
