@@ -14,10 +14,10 @@ public class changeQuestion : MonoBehaviour
     Text answer3;
     Text answer4;
     Text questionText;
-    GameObject button1;
-    GameObject button2;
-    GameObject button3;
-    GameObject button4;
+    public static GameObject button1;
+    public static GameObject button2;
+    public static GameObject button3;
+    public static GameObject button4;
     public GameObject counter;
     public GameObject changeColor;
     public string selectedAnswer;
@@ -89,7 +89,7 @@ public class changeQuestion : MonoBehaviour
             colorCounter -= Time.deltaTime;
             counter.GetComponent<Text>().text = ((int)countdown).ToString();
             if(colorCounter > 1){
-                Debug.Log("Colored as hell!");
+                
             }else{
                 button1.GetComponent<Image>().color = new Color32(255,255,255,255);
                 button2.GetComponent<Image>().color = new Color32(255,255,255,255);
