@@ -74,9 +74,8 @@ public class spawnFood : MonoBehaviour
             //count points
             req = new requestMessage(WS.userid_global, ""+WS.foodGamePoints, "addScore");
             WS.ws.Send(JsonUtility.ToJson(req));
-             if(WS.roundNr < 4){
+             if(WS.roundNr < 3){
                 SceneManager.LoadScene(7);
-                
             }
             else {
                 SceneManager.LoadScene(9);

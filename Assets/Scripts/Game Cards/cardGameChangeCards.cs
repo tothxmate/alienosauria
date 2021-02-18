@@ -42,10 +42,7 @@ public class cardGameChangeCards : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(round==0){
-            round = 1;
-            WS.roundNr++;
-        }
+        round = 1;
 
         Debug.Log("ROUND NUMBERRRRR");
         Debug.Log(WS.roundNr);
@@ -94,16 +91,9 @@ public class cardGameChangeCards : MonoBehaviour
             // cardStates.Clear();
 
             InvokeRepeating("ChangeCards", 0, 2);
-            round++;
             Debug.Log("ROUNDDDD");
             Debug.Log(round);
             countdown = 1;
-            if (round == 20)
-            {
-                lastgame = true;
-                CancelInvoke("ChangeCards");
-            }
-
         }
 
         if (lastgame == true)
@@ -118,7 +108,7 @@ public class cardGameChangeCards : MonoBehaviour
             req = new requestMessage(WS.userid_global, ""+WS.cardGamePoints, "addScore");
             WS.ws.Send(JsonUtility.ToJson(req));
             
-            if(WS.roundNr < 4){
+            if(WS.roundNr > 3){
                 SceneManager.LoadScene(7);
             }else {
                 SceneManager.LoadScene(9);
@@ -189,8 +179,14 @@ public class cardGameChangeCards : MonoBehaviour
 
     void ChangeCards()
     {
+        round++;
         randomNumber = UnityEngine.Random.Range(1, 10);
         StartCoroutine(Test());
+        if (round == 3)
+        {
+            lastgame = true;
+            CancelInvoke("ChangeCards");
+        }
     }
 
 
