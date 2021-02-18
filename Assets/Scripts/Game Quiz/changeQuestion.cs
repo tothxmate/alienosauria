@@ -140,12 +140,21 @@ public class changeQuestion : MonoBehaviour
             if(selectedText==answer && rounds <= 6){    
                 WS.quizGamePoints++;
                 changeColor.gameObject.GetComponent<Image>().color = new Color32(13,236,65,255);
+                button1.GetComponent<Button>().enabled = false;
+                button2.GetComponent<Button>().enabled = false;
+                button3.GetComponent<Button>().enabled = false;
+                button4.GetComponent<Button>().enabled = false;
                 Debug.Log("Right answer!"+WS.quizGamePoints);
                 Debug.Log("Rounds: "+rounds);
+
                 //ide kell még requestelni uj kérdéseket és válaszokat
             }
             else {
                 changeColor.gameObject.GetComponent<Image>().color = new Color32(243,0,0,255);
+                button1.GetComponent<Button>().enabled = false;
+                button2.GetComponent<Button>().enabled = false;
+                button3.GetComponent<Button>().enabled = false;
+                button4.GetComponent<Button>().enabled = false;
                 Debug.Log("Rounds: "+rounds);
                 Debug.Log("Youre quite stupid! :(");
             }
