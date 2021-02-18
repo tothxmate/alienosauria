@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+using WebSocketSharp;
+
 namespace ConnectionNamespace
 {
     public class joinGame : MonoBehaviour
@@ -36,8 +38,12 @@ namespace ConnectionNamespace
                         }
                         else
                         {
-                            Debug.Log("yesyes");
+                            
                         }
+                        break;
+                    case "toCharacterChoose":
+                        sceneNr = 3;
+                        SceneManager.LoadScene(sceneNr);
                         break;
                 }
             };

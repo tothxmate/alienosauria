@@ -20,7 +20,7 @@ namespace ConnectionNamespace
         public static string initHostReply;
 
         string msg;
-        string amount_joined;
+        string amount_joined = "";
 
         responseMessage res;
         requestMessage req;
@@ -31,6 +31,7 @@ namespace ConnectionNamespace
             WS.role = "host";
             WS.ws = new WebSocket("ws://kutyadoki.hu/socket/");
             WS.ws.Connect();
+            players = GameObject.Find("Players");
             roomNumber = GameObject.Find("Number");
             inputName = GameObject.Find("NameText");
             Debug.Log("dasd");
@@ -48,7 +49,6 @@ namespace ConnectionNamespace
                         break;
                     case "getJoinedPlayerAmount":
                         amount_joined = res.response;
-                        players.GetComponent<Text>().text = amount_joined;
                         break;
                 }
             };
@@ -62,7 +62,9 @@ namespace ConnectionNamespace
         // Update is called once per frame
         void Update()
         {
-            
+            if(amount_joined!=""){
+                players.GetComponent<Text>().text = amount_joined+"/4";
+            }
         }
 
         
@@ -81,7 +83,6 @@ namespace ConnectionNamespace
             {
                 req = new requestMessage(WS.userid_global, inGameName, "setPlayerName");
                 WS.ws.Send(JsonUtility.ToJson(req));
-                //inGameName-t elkuldeni a szeronak
                 sceneNr = 3;
                 
                 SceneManager.LoadScene(sceneNr);
