@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using WebSocketSharp;
 
 namespace ConnectionNamespace
 {
@@ -21,6 +22,7 @@ namespace ConnectionNamespace
         // Start is called before the first frame update
         void Start()
         {
+            popup p = new popup();
             WS.role = "guest";
             WS.ws = new WebSocket("ws://kutyadoki.hu/socket/");
             WS.ws.Connect();
@@ -32,10 +34,12 @@ namespace ConnectionNamespace
                     case "initGuest":
                         if (res.userid == "none")
                         {
+                            p.popupWindow("This room doesn't exist!");
                             Debug.Log("THIS ROOM DOESNT EXIST");
                         }
                         else
                         {
+                            p.popupWindow("Please wait until the host starts the game!");
                             Debug.Log("yesyes");
                         }
                         break;
@@ -68,9 +72,11 @@ namespace ConnectionNamespace
 
             if (roomNumber != "" && inGameName != "")
             {
-               
-            initGuestMessage init_guest = new initGuestMessage("initGuest",inGameName,roomNumber);
-            WS.ws.Send(JsonUtility.ToJson(init_guest));
+            Debug.Log("ratyii");
+            msg = "{\"action\":\"initGuest\", \"username\":\"" + inGameName + "\",\"roomNumber\":\"" + roomNumber + "\"}";
+            WS.ws.Send(msg);
+            Debug.Log("Waiting for host to start...");
+            //SceneManager.LoadScene(3);
 
             }
             else if (roomNumber != "" && inGameName == "")
